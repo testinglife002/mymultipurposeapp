@@ -1,15 +1,17 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-// import './index.css'
-import App from './App.jsx'
-import TodosApp from './apps/todos/TodosApp.jsx'
-
-// index.js
+// client/src/main.jsx
+import React from "react";
+import { createRoot } from "react-dom/client";
+import App from "./App.jsx";
 import { HelmetProvider } from "react-helmet-async";
 
+// Optional: import global styles
+// import "./index.css";
 
-createRoot(document.getElementById('root')).render(
-  <HelmetProvider>
-    <App />
-  </HelmetProvider>
-)
+const root = createRoot(document.getElementById("root"));
+root.render(
+  <React.StrictMode>
+    <HelmetProvider>
+      <App />
+    </HelmetProvider>
+  </React.StrictMode>
+);
