@@ -1,0 +1,87 @@
+.admin-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 55px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  color: #fff;
+  padding: 0 1rem;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.admin-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.admin-sidebar-toggle-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  margin-right: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.admin-sidebar-toggle-btn:hover {
+  transform: rotate(90deg);
+}
+
+.admin-header-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.admin-header-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.admin-header-icon, .header-user {
+  cursor: pointer;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.admin-header-icon:hover, .header-user:hover {
+  color: #ffda79;
+  transform: scale(1.1);
+}
+
+/* Tooltip styling */
+.tooltip {
+  position: relative;
+}
+
+.tooltip::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -28px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(30, 30, 30, 0.9);
+  color: #fff;
+  padding: 0.3rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.tooltip:hover::after {
+  opacity: 1;
+}
+
+
+
+
+
+

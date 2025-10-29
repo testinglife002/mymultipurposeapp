@@ -1,0 +1,63 @@
+.todo-layout {
+  display: flex;
+  height: 100vh;
+  background: #f5f6f8;
+}
+
+.main-area {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  padding: 16px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.todo-sidebar {
+  background: linear-gradient(135deg, #1f1f1f, #333);
+  color: white;
+  transition: width 0.3s ease;
+  padding-top: 10px;
+  overflow: hidden;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  z-index: 100;
+}
+.todo-sidebar.collapsed {
+  width: 60px;
+}
+.todo-sidebar.expanded {
+  width: 220px;
+}
+
+.todo-sidebar-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px;
+}
+
+.todo-sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+
+.todo-nav-item {
+  color: white;
+  padding: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.todo-nav-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+.todo-nav-item.active {
+  background: rgba(255, 255, 255, 0.2);
+}

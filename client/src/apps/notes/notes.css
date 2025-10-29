@@ -1,0 +1,5 @@
+/* notes.css */
+.app-container { font-family: Verdana, sans-serif; }
+.app-header { background: #008080; color: white; padding: 1rem; }
+.app-main { padding: 2rem; }
+.app-notes { color: #008080; font-weight: bold; }

@@ -1,0 +1,255 @@
+.channel-manager {
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.channel-manager {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.channel-manager h2 {
+  font-size: 1.6rem;
+  margin: 15px 0;
+  color: #222;
+}
+
+.channel-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 25px;
+  background: #f9f9fc;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+}
+
+.channel-form input {
+  flex: 1 1 220px;
+  padding: 10px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.btn-submit {
+  padding: 10px 22px;
+  background: #4f46e5;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.btn-submit:hover {
+  background: #3730a3;
+}
+
+.channel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(250px,1fr));
+  gap: 18px;
+}
+
+.channel-card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s, border 0.3s;
+  cursor: pointer;
+}
+
+.channel-card:hover {
+  transform: translateY(-4px);
+}
+
+.channel-card.selected {
+  border: 2px solid #4f46e5;
+}
+
+.channel-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+}
+
+.channel-info {
+  padding: 12px;
+}
+
+.channel-info h3 {
+  margin: 0 0 5px;
+  color: #111;
+}
+
+.channel-info p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #555;
+}
+
+.channel-actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px 12px;
+  border-top: 1px solid #eee;
+}
+
+.channel-actions button {
+  background: none;
+  border: none;
+  margin-left: 10px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #4f46e5;
+  transition: color 0.3s;
+}
+
+.channel-actions button:hover {
+  color: #3730a3;
+}
+
+.channel-preview {
+  margin-top: 30px;
+  padding: 20px;
+  background: #f3f4f6;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.channel-preview h2 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 15px;
+  color: #111;
+}
+
+.preview-image {
+  width: 100%;
+  max-height: 240px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+
+.sidebar {
+  flex: 1;
+  max-width: 350px;
+  background: #f9f9f9;
+  padding: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.sidebar h3 {
+  margin-bottom: 15px;
+}
+
+.add-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.add-row input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
+.add-row button {
+  padding: 8px;
+  background: #4f46e5;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.add-row button:hover {
+  background: #3730a3;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+.view-toggle button {
+  flex: 1;
+  padding: 6px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #e0e0e0;
+}
+.view-toggle button.active {
+  background: #4f46e5;
+  color: white;
+}
+
+.channels.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill,minmax(200px,1fr));
+  gap: 15px;
+}
+.channels.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.channel-card {
+  background: white;
+  border-radius: 10px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.channel-card img {
+  width: 100%;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.channel-card .actions {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+.channel-card .actions button {
+  border: none;
+  background: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.channels-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.channels-table th, .channels-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+.channels-table img.thumb {
+  width: 40px;
+  height: 40px;
+  border-radius: 6px;
+  object-fit: cover;
+}

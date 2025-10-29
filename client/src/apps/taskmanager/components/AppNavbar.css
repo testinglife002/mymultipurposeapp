@@ -1,0 +1,20 @@
+.navbar {
+  background-color: #212529 !important; /* Bootstrap dark */
+}
+
+.navbar-toolbar {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.navbar-brand {
+  font-weight: bold;
+  color: white;
+}
+
+.navbar-actions button {
+  margin-left: 8px;
+  border-color: white !important;
+  color: white !important;
+}

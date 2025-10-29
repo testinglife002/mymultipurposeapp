@@ -1,0 +1,6 @@
+
+
+credentials
+db_user = testinglife001
+db_password = OhTilTIENkT5vEzJ
+mongodb_uri = mongodb+srv://testinglife001:OhTilTIENkT5vEzJ@mymultipurposeapp.yeb69g3.mongodb.net/?retryWrites=true&w=majority&appName=mymultipurposeapp

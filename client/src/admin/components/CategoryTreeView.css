@@ -1,0 +1,66 @@
+/* Container */
+.category-tree-container {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 20px;
+  max-width: 700px;
+  margin: 20px auto;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+  font-family: "Segoe UI", sans-serif;
+  transition: all 0.3s ease;
+}
+
+.category-tree-container:hover {
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+/* Header */
+.category-tree-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 2px solid #f3f4f6;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+}
+
+.category-tree-header h2 {
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin: 0;
+}
+
+.tree-icon {
+  color: #6366f1;
+}
+
+/* Add category section */
+.add-category-box {
+  margin-bottom: 20px;
+  padding: 12px;
+  border: 1px dashed #cbd5e1;
+  border-radius: 10px;
+  background: #fafafa;
+  transition: all 0.2s ease-in-out;
+}
+
+.add-category-box:hover {
+  border-color: #6366f1;
+  background: #f9f9ff;
+}
+
+/* Tree list */
+.tree-list {
+  padding-left: 8px;
+}
+
+.empty-message {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #6b7280;
+  font-size: 0.95rem;
+  margin-top: 10px;
+}

@@ -1,0 +1,5 @@
+/* 8️⃣ Outline.css */
+.outline {
+  color: transparent;
+  -webkit-text-stroke: 1.5px var(--color1, #fff);
+}

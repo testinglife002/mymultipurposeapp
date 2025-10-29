@@ -1,0 +1,186 @@
+.board-page {
+  width: 100%;
+  font-family: 'Inter', sans-serif;
+  background: #f4f5f7;
+  overflow-y: hidden; /* Single scroll for whole page */
+  overflow-x: hidden;
+  position: relative;
+  height: 100vh;
+}
+
+.spinner-center {
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+  font-size: 18px;
+  color: #172b4d;
+}
+
+/* Header Controls */
+.board-header-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px 16px;
+  background: #f4f5f7;
+  border-bottom: 1px solid #dfe1e6;
+  position: sticky;
+  top: 0;
+  z-index: 20;
+}
+
+/* Buttons */
+.btn-primary, .btn-secondary, .btn-delete, .btn-edit-board, .btn-delete-board, .btn-manage-members {
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: all 0.2s;
+}
+.btn-primary { background: #0079bf; color: white; border: none; }
+.btn-primary:hover { background: #026aa7; }
+.btn-secondary { background: #f4f5f7; color: #172b4d; border: 1px solid #dfe1e6; }
+.btn-secondary:hover { background: #ebecf0; }
+.btn-delete { background: #eb5a46; color: white; border: none; }
+.btn-delete:hover { background: #cf513d; }
+.btn-edit-board, .btn-delete-board, .btn-manage-members { background: #f4f5f7; border: 1px solid #dfe1e6; }
+.btn-edit-board:hover, .btn-delete-board:hover, .btn-manage-members:hover { background: #ebecf0; }
+
+
+
+/* Add List Input */
+.add-list { display: flex; align-items: center; gap: 6px; }
+.add-list input { padding: 6px 10px; border-radius: 6px; border: 1px solid #dfe1e6; outline: none; width: 180px; }
+.add-list input:focus { border-color: #0079bf; }
+
+
+.btn-members {
+  background: #f4f5f7;
+  color: #172b4d;
+  border: 1px solid #dfe1e6;
+  padding: 6px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.btn-members:hover { background: #ebecf0; }
+
+/* Board Main */
+.board-main {
+  display: flex;
+  width: 100%;
+  height: calc(100vh - 64px);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Board-left scaling */
+/* Board-left (no scrollbars, keeps all layout/transition behavior) */
+/* --- Board-left: Dual scrollbars + auto-hide --- */
+/* Board-left (no scrollbars, keeps all layout/transition behavior) */
+.board-left {
+  flex: 1;
+  padding: 12px;
+  height: 100%;
+  transform-origin: left top;
+  transition: transform 0.3s ease;
+  background: #f9fafb;
+
+  /* Keep layout responsive, disable visible scrolls */
+  overflow: hidden;
+}
+
+.board-left.scaled {
+  transform: scale(0.92);
+}
+
+
+
+.board-left.scaled {
+  transform: scale(0.92);
+}
+
+
+/* Right Overlay */
+.board-right-overlay {
+  background: #f4f5f7;
+  border-left: 1px solid #dfe1e6;
+  transition: width 0.3s ease;
+  overflow: hidden; /* removed scroll */
+}
+.board-right-overlay.collapsed { width: 60px; }
+.board-right-overlay.expanded { width: 220px; }
+
+/* Activity Toggle */
+.activity-toggle-header { cursor: pointer; display: flex; align-items: center; justify-content: center; padding: 6px; border-radius: 6px; background: #f4f5f7; transition: all 0.2s; }
+.activity-toggle-header:hover { background: #ebecf0; }
+
+/* Modals */
+.custom-modal-backdrop { position: fixed; inset: 0; background: rgba(23,43,77,0.55); z-index: 100; display: flex; justify-content: center; align-items: center; }
+.custom-modal { background: #fff; border-radius: 12px; width: 420px; max-width: 90%; box-shadow: 0 10px 30px rgba(9,30,66,0.4); animation: modalPop 0.25s ease; }
+@keyframes modalPop { from { opacity: 0; transform: translateY(-20px); } to { opacity: 1; transform: translateY(0); } }
+.modal-header { display: flex; justify-content: space-between; align-items: center; padding: 14px 18px; border-bottom: 1px solid #ebecf0; }
+.modal-body { padding: 16px 18px; display: flex; flex-direction: column; gap: 8px; }
+.modal-body input, .modal-body textarea, .modal-body select { padding: 6px 8px; border-radius: 6px; border: 1px solid #dfe1e6; outline: none; }
+.modal-body input:focus, .modal-body textarea:focus, .modal-body select:focus { border-color: #0079bf; }
+.modal-footer { padding: 12px 18px; display: flex; justify-content: flex-end; gap: 10px; }
+.close-btn { background: none; border: none; font-size: 18px; cursor: pointer; }
+
+/* Members section inside modal */
+.members-section { display: flex; flex-direction: column; gap: 8px; }
+.members-section ul { list-style: none; padding: 0; max-height: 200px; overflow-y: auto; }
+.members-section li { display: flex; justify-content: space-between; align-items: center; gap: 6px; }
+.members-section li button { background: none; border: none; cursor: pointer; }
+
+
+
+/* Remove all visible scrollbars globally inside the board 
+.board-page,
+.board-main,
+.board-left,
+.board-right-overlay,
+.activity-container,
+.activity-list {
+  scrollbar-width: none !important; 
+  -ms-overflow-style: none !important; 
+}
+
+
+.board-page::-webkit-scrollbar,
+.board-main::-webkit-scrollbar,
+.board-left::-webkit-scrollbar,
+.board-right-overlay::-webkit-scrollbar,
+.activity-container::-webkit-scrollbar,
+.activity-list::-webkit-scrollbar {
+  display: none !important; 
+}
+*/
+
+/* Ensure internal containers don't overflow 
+.board-left,
+.activity-list {
+  overflow: hidden !important;
+}
+*/
+
+/* Smooth hand-drag scrolling area (we'll add JS for this next) 
+.board-left.drag-scroll-active {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+}
+*/
+
+
+
+/* Responsive */
+@media (max-width: 992px) {
+  .board-header-controls { flex-direction: column; }
+  .board-main { flex-direction: column; height: auto; }
+  .board-left { width: 100% !important; transform: scale(1) !important; }
+  .board-right-overlay { width: 100% !important; }
+}
+
+
+
+

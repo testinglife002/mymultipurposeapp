@@ -1,0 +1,213 @@
+/* ✅ src/admin/pages/ProjectManager.css */
+/* src/admin/pages/ProjectManager.css */
+.project-manager {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1rem;
+}
+
+.sidebar {
+  flex: 1;
+  border-right: 1px solid #ddd;
+  padding-right: 1rem;
+}
+
+.content {
+  flex: 2;
+}
+
+/* Make sidebar scrollable both vertically and horizontally */
+/* Sidebar and Content Scrollbars */
+.sidebar,
+.content {
+  overflow: auto; /* allow both vertical and horizontal scrollbars */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling for iOS */
+  max-height: calc(100vh - 2rem); /* ensure scrollable if content exceeds viewport */
+}
+
+/* Chrome, Edge, Safari */
+.sidebar::-webkit-scrollbar,
+.content::-webkit-scrollbar {
+  width: 8px;   /* vertical scrollbar width */
+  height: 8px;  /* horizontal scrollbar height */
+}
+
+.sidebar::-webkit-scrollbar-thumb,
+.content::-webkit-scrollbar-thumb {
+  background-color: #007bff; /* blue theme */
+  border-radius: 6px;
+  border: 2px solid #f0f0f0; /* optional border for contrast */
+}
+
+.sidebar::-webkit-scrollbar-track,
+.content::-webkit-scrollbar-track {
+  background-color: #e6e6e6; /* light gray track */
+  border-radius: 6px;
+}
+
+/* Firefox */
+.sidebar,
+.content {
+  scrollbar-width: thin;
+  scrollbar-color: #007bff #e6e6e6;
+}
+
+/* Optional: hover effect for scrollbar thumb */
+.sidebar::-webkit-scrollbar-thumb:hover,
+.content::-webkit-scrollbar-thumb:hover {
+  background-color: #0056b3; /* darker blue on hover */
+}
+
+
+
+
+.add-row {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.search-box {
+  width: 100%;
+  padding: 0.4rem;
+  margin: 0.5rem 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* View Modes */
+.projects.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.projects.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.projects.table {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 0.75rem;
+}
+
+/* Project Card */
+.project-card {
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  border-radius: 6px;
+  background: #f9f9f9;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.project-card:hover {
+  background: #f0f0f0;
+}
+
+/* Apps */
+.apps-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+.apps-list li {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border: 1px solid #eee;
+  margin-bottom: 0.5rem;
+  border-radius: 4px;
+  background: #fff;
+}
+
+/* Actions */
+.actions {
+  display: flex;
+  gap: 0.4rem;
+}
+.actions button {
+  padding: 0.25rem 0.6rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s ease;
+}
+.actions button.edit {
+  background: #007bff;
+  color: white;
+}
+.actions button.delete {
+  background: #dc3545;
+  color: white;
+}
+
+/* Toggles */
+.view-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin: 0.5rem 0;
+}
+.view-toggle button {
+  padding: 0.35rem 0.75rem;
+  border: 1px solid #007bff;
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+}
+.view-toggle button.active {
+  background: #007bff;
+  color: #fff;
+}
+
+/* Pagination */
+.pagination {
+  margin-top: 0.75rem;
+  display: flex;
+  gap: 0.3rem;
+}
+.pagination button {
+  padding: 0.3rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  background: #fff;
+  cursor: pointer;
+}
+.pagination button.active {
+  background: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.share-section {
+  margin-top: 1.5rem;
+}
+
+/* Table View */
+.projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.75rem;
+}
+
+.projects-table th,
+.projects-table td {
+  border: 1px solid #ddd;
+  padding: 0.6rem;
+  text-align: left;
+}
+
+.projects-table th {
+  background: #f3f3f3;
+}
+
+.projects-table tr:hover {
+  background: #f9f9f9;
+}
+
+.project-row {
+  cursor: pointer;
+}
+
+

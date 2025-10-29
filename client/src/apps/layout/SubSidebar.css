@@ -1,0 +1,185 @@
+/* ===========================
+   Shared SubSidebar Styling
+   =========================== */
+
+.sub-sidebar {
+  background-color: #2196f3;
+  color: #f1f5f9;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  transition: all 0.3s ease;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;
+}
+
+
+
+
+/* Width transitions */
+.sub-sidebar.expanded {
+  width: 240px;
+}
+
+.sub-sidebar.collapsed {
+  width: 72px;
+}
+
+/* Header button styling */
+.sub-sidebar-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 56px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.toggle-btn {
+  color: #f1f5f9 !important;
+}
+
+/* Nav link styling */
+.sub-sidebar-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 12px 0;
+  gap: 4px;
+}
+
+
+.sub-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #cbd5e1;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+
+.sub-nav-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+/* Active link */
+
+.sub-nav-item.active {
+  background-color: #2563eb;
+  color: #fff;
+}
+
+/* Collapsed state: icons only */
+
+.sub-sidebar.collapsed .sub-nav-item span {
+  display: none;
+}
+
+/* Subtle fade animation for open/close */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+
+.sub-sidebar {
+  animation: fadeSlideIn 0.3s ease;
+}
+
+/* ============================
+   TodoSidebar Blue Theme (same as Sidebar)
+   ============================ */
+/* src/apps/todos/layout/TodoSidebar.css */
+
+.todo-sidebar {
+  background-color: #1976d2; /* Base blue (same as Sidebar) */
+  color: white;
+  height: 100vh;
+  transition: width 0.3s ease, background-color 0.3s ease;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  animation: fadeSlideIn 0.3s ease;
+}
+
+/* Hover & expanded state */
+.todo-sidebar.expanded {
+  width: 220px;
+}
+.todo-sidebar.collapsed {
+  width: 64px;
+}
+
+/* Header */
+.todo-sidebar-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 56px;
+  padding: 0 16px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+}
+
+/* Nav items */
+.todo-sidebar-nav {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 8px 0;
+  gap: 4px;
+}
+
+.todo-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  font-size: 14px;
+  color: #e3f2fd;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+.todo-nav-item:hover {
+  background-color: #1565c0;
+  color: #fff;
+}
+
+.todo-nav-item.active {
+  background-color: #0d47a1;
+  color: #fff;
+}
+
+/* Hide labels when collapsed */
+.todo-sidebar.collapsed .todo-nav-item span {
+  display: none;
+}
+
+/* Animation */
+@keyframes fadeSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+

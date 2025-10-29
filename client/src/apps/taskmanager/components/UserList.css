@@ -1,0 +1,42 @@
+.userlist-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.userlist-label {
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.userlist-members {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.userlist-empty {
+  color: #6c757d;
+  font-size: 0.9rem;
+}
+
+.user-chip {
+  background: #0d6efd !important; /* Bootstrap primary */
+  color: #fff !important;
+}
+
+.userlist-input {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.userlist-textfield {
+  flex: 1;
+}
+
+.userlist-btn {
+  min-width: 80px;
+  font-weight: 500;
+}

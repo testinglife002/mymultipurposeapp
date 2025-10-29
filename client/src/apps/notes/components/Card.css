@@ -1,0 +1,42 @@
+.note-card-mui {
+  width: 250px;
+  min-height: 220px;
+  max-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.note-card .card-preview {
+  display: -webkit-box;
+  -webkit-line-clamp: 4; /* limit to 4 lines */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+
+.card-header {
+  padding: 0.5rem;
+}
+
+.note-title {
+  font-weight: 600;
+}
+
+.note-preview {
+  font-size: 0.85rem;
+  color: #555;
+  max-height: 110px;
+  overflow: hidden;
+}
+
+.shared-chip {
+  margin-top: 0.5rem;
+}
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  padding: 0.25rem 0.5rem;
+}

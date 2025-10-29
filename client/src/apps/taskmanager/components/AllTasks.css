@@ -1,0 +1,51 @@
+/* AllTasks.css */
+
+.all-tasks-container {
+  padding: 16px;
+}
+
+.all-tasks-title {
+  margin-bottom: 12px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.task-card {
+  padding: 12px;
+  border-radius: 8px;
+  cursor: grab;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.task-card:active {
+  cursor: grabbing;
+}
+
+.task-card:hover {
+  background-color: #f5f5f5;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+.task-card-body {
+  font-size: 1rem;
+  font-weight: 500;
+  color: #444;
+}
+
+.add-task-section {
+  margin-top: 24px;
+}
+
+.task-manager-title {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #222;
+}

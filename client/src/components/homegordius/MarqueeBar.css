@@ -1,0 +1,19 @@
+.gordius-marquee-bar {
+  background: linear-gradient(90deg, #712cf9, #ff6f61);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  font-weight: 500;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.gordius-marquee-icon {
+  margin-right: 0.75rem;
+  font-size: 1.3rem;
+}
+
+.gordius-marquee-text {
+  margin-right: 2rem;
+  font-size: 0.95rem;
+}

@@ -1,0 +1,11 @@
+/* 9️⃣ ShadowPulse.css */
+.shadowPulse {
+  color: var(--color1, #fff);
+  text-shadow: 0 0 10px var(--color2, #0ff);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { text-shadow: 0 0 5px var(--color2); }
+  50% { text-shadow: 0 0 20px var(--color2); }
+}

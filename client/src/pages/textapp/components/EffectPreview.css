@@ -1,0 +1,60 @@
+/* src/pages/textapp/components/EffectPreview.css */
+
+/* container for each preset tile */
+.effect-preview {
+  margin: 8px 6px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+/* the clickable thumbnail */
+.effect-thumb {
+  border: none;
+  padding: 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  min-width: 140px;
+  max-width: 160px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.12);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+  display: flex;
+  align-items: center;
+}
+
+.effect-thumb:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.16);
+}
+
+.thumb-inner {
+  width: 100%;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+/* small sample text that uses selected layer's font family + weight */
+.thumb-sample {
+  width: 36px;
+  height: 36px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(2px);
+}
+
+/* label next to sample */
+.thumb-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255,255,255,0.92);
+  text-shadow: 0 1px 0 rgba(0,0,0,0.35);
+}
+
+/* small responsive tweak */
+@media (max-width: 880px) {
+  .effect-thumb { min-width: 120px; }
+  .thumb-label { font-size: 11px; }
+}

@@ -1,0 +1,171 @@
+/* Container */
+.taskdetails-container {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  font-family: "Arial", sans-serif;
+}
+
+/* Header */
+.taskdetails-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.taskdetails-actions > * {
+  margin-left: 0.5rem;
+}
+
+/* Content */
+.taskdetails-content {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+  flex-wrap: wrap;
+}
+
+.taskdetails-left, .taskdetails-right {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Stage & Priority */
+.stage-priority {
+  margin-top: 1rem;
+}
+
+/* File upload */
+.upload-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  color: #1976d2;
+}
+
+.file-input {
+  display: none;
+}
+
+/* Assets grid */
+.asset-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.asset-img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+/* Subtasks */
+.task-subtasks {
+  margin-top: 1rem;
+}
+
+.subtask-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+}
+
+.subtask-actions > * {
+  margin-left: 0.5rem;
+}
+
+/* Activities Tab */
+.activities-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 1rem;
+}
+
+.activities-left, .activities-right {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+}
+
+.activities-left {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.activity-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin-bottom: 0.5rem;
+  background-color: #fafafa;
+}
+
+.activity-icon {
+  font-size: 1.5rem;
+  color: #1976d2;
+}
+
+/* Activities Right Panel */
+/* Activities Right Panel */
+.activities-right {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  max-height: 600px; /* set max height for right panel */
+  border: 1px solid #eee;
+  border-radius: 5px;
+  padding: 0.5rem;
+  position: relative;
+}
+
+.activities-right h4 {
+  margin-bottom: 0.5rem;
+}
+
+.activities-right textarea {
+  flex: 1; /* takes all available vertical space */
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  font-family: inherit;
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  overflow-y: auto;
+}
+
+/* Sticky submit button */
+.activities-right .btn-primary {
+  position: sticky;
+  bottom: 0;
+  align-self: flex-end;
+  margin-top: auto; /* ensures it stays at bottom even if textarea grows */
+  z-index: 10;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .taskdetails-content {
+    flex-direction: column;
+  }
+  .activities-container {
+    flex-direction: column;
+  }
+}

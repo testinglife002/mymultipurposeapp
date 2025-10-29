@@ -1,0 +1,152 @@
+/* Container */
+.activity-container {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  padding: 12px;
+  max-height: 500px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Inter', sans-serif;
+}
+
+/* Header */
+.activity-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.header-icons { display: flex; align-items: center; }
+
+.bell-btn {
+  position: relative;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.bell-btn .notif-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+}
+
+.tab {
+  padding: 6px 12px;
+  border: none;
+  background: #eee;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.tab.active {
+  background: #007bff;
+  color: white;
+}
+
+/* Activity List */
+/* Base scrollbar styles */
+.activity-list {
+  flex: 1;
+  overflow-y: auto;
+  padding-right: 6px;
+  position: relative;
+  scroll-behavior: smooth;
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+/* WebKit Scrollbar (hidden by default) */
+.activity-list::-webkit-scrollbar {
+  width: 8px;
+}
+
+.activity-list::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.activity-list::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 120, 0);
+  border-radius: 4px;
+  opacity: 0;
+  transition: background 0.4s ease, opacity 0.4s ease;
+}
+
+/* Only visible while scrolling */
+.activity-list.show-scroll::-webkit-scrollbar-thumb {
+  background: rgba(120, 120, 120, 0.5);
+  opacity: 1;
+}
+
+/* Active state (while grabbing) */
+.activity-list.show-scroll::-webkit-scrollbar-thumb:active {
+  background: rgba(100, 100, 100, 0.7);
+}
+
+/* Firefox visibility control */
+.activity-list.show-scroll {
+  scrollbar-color: rgba(120, 120, 120, 0.5) transparent;
+}
+
+/* Hide again when idle */
+.activity-list {
+  scrollbar-color: transparent transparent;
+  transition: scrollbar-color 0.4s ease;
+}
+
+
+.activity-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  padding: 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.activity-icon { font-size: 18px; }
+.activity-content { flex: 1; }
+.activity-text { font-size: 14px; }
+.activity-time { font-size: 12px; color: gray; }
+
+.activity-actions {
+  display: flex;
+  gap: 4px;
+}
+
+.small-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.no-activity {
+  padding: 20px;
+  text-align: center;
+  color: gray;
+}
+
+/* Notifications */
+.notifications-container { display: flex; flex-direction: column; height: 100%; }
+.notifications-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}

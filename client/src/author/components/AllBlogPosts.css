@@ -1,0 +1,8 @@
+.post-item {
+  border-bottom: 1px solid #eee;
+  padding: 10px 0;
+}
+
+.post-item:last-child {
+  border-bottom: none;
+}

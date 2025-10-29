@@ -1,0 +1,36 @@
+.blendmode-selector {
+  margin-top: 10px;
+}
+
+.blendmode-selector h6 {
+  margin-bottom: 6px;
+}
+
+.blend-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+}
+
+.blend-thumb {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 10px;
+  color: #fff;
+  padding-bottom: 2px;
+  text-shadow: 0 0 2px rgba(0,0,0,0.8);
+  background-size: cover;
+  background-position: center;
+}
+
+.blend-thumb.active {
+  border: 2px solid #007bff;
+}

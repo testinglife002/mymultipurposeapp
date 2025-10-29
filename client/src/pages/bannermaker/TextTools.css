@@ -1,0 +1,16 @@
+.text-tools {
+  margin-top: 10px;
+}
+
+.text-tools h6 {
+  margin-bottom: 8px;
+}
+
+.text-tools input,
+.text-tools select {
+  margin-bottom: 6px;
+}
+
+.text-tools button {
+  margin-top: 4px;
+}

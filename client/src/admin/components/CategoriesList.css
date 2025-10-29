@@ -1,0 +1,136 @@
+/* src/pages/dashboard/CategoriesList.css */
+
+.categories-list-container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 1rem;
+}
+
+.categories-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.categories-header h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #222;
+}
+
+.categories-header .icon {
+  color: #6a4df5;
+}
+
+.categories-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.category-card {
+  background: #fff;
+  padding: 1.2rem;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.category-card h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+}
+
+.category-card p {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 12px;
+  flex-grow: 1;
+}
+
+.card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  border: none;
+  transition: background 0.25s ease;
+}
+
+.edit-btn {
+  background: #6a4df5;
+  color: #fff;
+  text-decoration: none;
+}
+
+.edit-btn:hover {
+  background: #5639d3;
+}
+
+.delete-btn {
+  background: #f44336;
+  color: #fff;
+}
+
+.delete-btn:hover {
+  background: #d32f2f;
+}
+
+/* Loading & error styles */
+.loading {
+  text-align: center;
+  color: #555;
+  font-size: 1rem;
+}
+
+.error-message {
+  text-align: center;
+  color: #d9534f;
+  font-size: 1rem;
+}
+
+/* Add this to CategoriesList.css */
+
+/* Drag handle on card */
+.category-card.draggable {
+  position: relative;
+  cursor: grab;
+}
+
+.category-card.draggable:active {
+  cursor: grabbing;
+}
+
+.card-drag-handle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: grab;
+  color: #6a4df5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

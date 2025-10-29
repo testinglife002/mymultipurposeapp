@@ -1,0 +1,91 @@
+/* src/components/HeroWithVerticalSlider.css */
+
+.gordius-hero-slider {
+  display: flex;
+  height: 100vh;
+  background: url("https://wallpapercave.com/wp/wp1874010.jpg") center/cover;
+  color: #fff;
+}
+
+.gordius-hero-content {
+  flex: 1;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  backdrop-filter: brightness(0.8);
+}
+
+.gordius-hero-content h1 {
+  font-size: 3rem;
+  font-weight: 800;
+}
+
+.gordius-hero-content p {
+  margin: 1rem 0;
+  font-size: 1.2rem;
+}
+
+.gordius-cta-btn {
+  padding: 0.6rem 1.4rem;
+  background: #fff;
+  color: #000;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+}
+.gordius-cta-btn:hover {
+  background: #ddd;
+}
+
+.gordius-social-icons {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+.gordius-social-icons a {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.gordius-slider-panel {
+  width: 320px;
+  background: #000;
+  position: relative;
+}
+
+.gordius-slide img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.gordius-slide span {
+  display: block;
+  text-align: center;
+  margin-top: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.gordius-fab {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: #712cf9;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.gordius-fab:hover {
+  background: #5a1bd9;
+}
+

@@ -1,0 +1,162 @@
+/* Container for all todos */
+.todos-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Header with title and view toggle */
+.todos-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.todos-header h5 {
+  margin: 0;
+}
+
+/* Toggle buttons */
+.MuiToggleButtonGroup-root {
+  border: 1px solid #dee2e6;
+  border-radius: 6px;
+}
+
+.MuiToggleButton-root {
+  border-radius: 0;
+  padding: 6px 10px;
+  border-right: 1px solid #dee2e6;
+  min-width: 36px;
+  min-height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.MuiToggleButton-root:last-child {
+  border-right: none;
+}
+
+.MuiToggleButton-root.Mui-selected {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.MuiToggleButton-root:hover {
+  background-color: #e9ecef;
+}
+
+/* Grid cards container */
+.MuiGrid-container {
+  gap: 16px;
+}
+
+/* Table styling */
+.todo-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.todo-table th,
+.todo-table td {
+  border: 1px solid #dee2e6;
+  padding: 8px 12px;
+  text-align: left;
+}
+
+.todo-table th {
+  background-color: #f8f9fa;
+  font-weight: 600;
+}
+
+.clickable-row {
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.clickable-row:hover {
+  background-color: #f1f3f5;
+}
+
+/* Board view headings */
+.todo-board-heading {
+  text-transform: capitalize;
+  margin-bottom: 12px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/* Accordion/list view */
+.MuiAccordion-root {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  margin-bottom: 12px;
+}
+
+.MuiAccordionSummary-root {
+  background-color: #f8f9fa;
+  border-bottom: 1px solid #dee2e6;
+}
+
+.MuiAccordionDetails-root {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* Modal Box */
+.modal-box {
+  background-color: #fff;
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 600px;
+  margin: 100px auto;
+  outline: none;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Card actions */
+.MuiCardActions-root {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+/* Chips */
+.chip-status {
+  background-color: #6c757d;
+  color: #fff;
+  font-size: 0.75rem;
+}
+
+.chip-high {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.chip-medium {
+  background-color: #ffc107;
+  color: #000;
+}
+
+.chip-low {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+/* Typography */
+.MuiTypography-root {
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .todos-container {
+    padding: 12px;
+  }
+}

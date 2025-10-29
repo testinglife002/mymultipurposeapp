@@ -1,0 +1,29 @@
+.my-images-container {
+  text-align: center;
+  color: white;
+}
+
+.upload-btn {
+  display: inline-block;
+  background: #6f42c1;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.upload-btn:hover {
+  background: #5a379d;
+}
+
+.loader-container {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.scrollable {
+  overflow-y: auto;
+  height: 80vh;
+}

@@ -1,0 +1,7 @@
+/* Minimal styling tweaks */
+.MuiDialogTitle-root {
+  font-weight: bold;
+}
+.MuiDialogContent-root {
+  padding-top: 16px !important;
+}

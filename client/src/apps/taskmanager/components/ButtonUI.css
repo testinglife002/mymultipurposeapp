@@ -1,0 +1,89 @@
+.custom-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  outline: none;
+  background-color: #1a73e8;
+  color: #fff;
+}
+
+.custom-btn:hover {
+  background-color: #155ecb;
+}
+
+.custom-btn:active {
+  transform: scale(0.98);
+}
+
+.custom-btn.disabled,
+.custom-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Icon spacing */
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Label text */
+.btn-label {
+  display: inline-block;
+}
+
+/* Variants — can be applied via className */
+.btn-primary {
+  background-color: #1a73e8;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #0f5cd7;
+}
+
+.btn-secondary {
+  background-color: #e0e0e0;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background-color: #d5d5d5;
+}
+
+.btn-danger {
+  background-color: #d32f2f;
+  color: #fff;
+}
+
+.btn-danger:hover {
+  background-color: #b71c1c;
+}
+
+.btn-warning {
+  background-color: #fbc02d;
+  color: #fff;
+}
+
+.btn-warning:hover {
+  background-color: #f9a825;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid #ccc;
+  color: #333;
+}
+
+.btn-outline:hover {
+  background-color: #f2f2f2;
+}

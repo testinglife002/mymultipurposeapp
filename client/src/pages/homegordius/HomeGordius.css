@@ -1,0 +1,89 @@
+.gordius-home-gordius {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  width: 100vw;
+  overflow-x: hidden;
+  background: #f9f9fb;
+  font-family: 'Josefin Sans', sans-serif;
+  margin-left: -4%;
+}
+
+/* ===== Fixed Header ===== */
+.gordius-topbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+}
+
+.gordius-topbar-height {
+  height: 100px;
+}
+
+/* ===== Main Content ===== */
+.gordius-content-area {
+  flex: 1;
+  padding: 1rem 2rem;
+  margin-top: 1%;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.gordius-content-row {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+  margin-top: 2rem;
+  align-items: start;
+  width: 100%;
+}
+
+.gordius-left-col {
+  min-width: 260px;
+  position: sticky;
+  top: 120px;
+  height: fit-content;
+  align-self: start;
+}
+
+.gordius-right-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  padding-right: 0.5rem;
+}
+
+.gordius-right-col::-webkit-scrollbar {
+  width: 8px;
+}
+.gordius-right-col::-webkit-scrollbar-thumb {
+  background: #ccc;
+  border-radius: 4px;
+}
+.gordius-right-col::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+@media (max-width: 992px) {
+  .gordius-content-row {
+    grid-template-columns: 1fr;
+  }
+
+  .gordius-left-col {
+    position: static;
+    order: 2;
+  }
+
+  .gordius-right-col {
+    order: 1;
+    max-height: none;
+    overflow: visible;
+  }
+}

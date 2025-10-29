@@ -1,0 +1,21 @@
+.subscription-list {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.subscription-list li {
+  background: #f0f7ff;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #d0e4ff;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.subscription-list li:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}

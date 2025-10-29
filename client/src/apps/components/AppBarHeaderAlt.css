@@ -1,0 +1,100 @@
+.app-mat-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 64px;
+  background-color: #1976d2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  color: white;
+  z-index: 1400;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.app-mat-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.app-mat-hamburger {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: inherit;
+  cursor: pointer;
+}
+
+.app-mat-header-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.app-mat-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.app-mat-icon-btn {
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.app-mat-icon-btn:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.app-mat-nav-dropdown,
+.app-mat-user-dropdown {
+  position: relative;
+}
+
+.app-mat-nav-dropdown button,
+.app-mat-user-dropdown button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.app-mat-nav-dropdown button:hover,
+.app-mat-user-dropdown button:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+.app-mat-dropdown {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background: #1565c0;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  min-width: 120px;
+  border-radius: 4px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  z-index: 1500;
+}
+
+.app-mat-dropdown li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.app-mat-dropdown li:hover {
+  background-color: #0d47a1;
+}

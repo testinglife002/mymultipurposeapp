@@ -1,0 +1,122 @@
+.dashboard-segment-container {
+  padding: 2rem;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.dashboard-segment-container h1 {
+  margin-bottom: 1.5rem;
+  font-size: 2rem;
+  color: #333;
+}
+
+.segment-cards-section,
+.segment-table-section {
+  margin-bottom: 2rem;
+}
+
+.segment-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.segment-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.segment-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.segment-card-body {
+  margin-bottom: 1rem;
+}
+
+.segment-title {
+  font-size: 1.2rem;
+  color: #111;
+  margin-bottom: 0.5rem;
+}
+
+.segment-bangla {
+  font-size: 0.95rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.segment-desc {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.segment-card-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+}
+
+.btn-edit,
+.btn-delete {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.3rem 0.6rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: all 0.2s ease;
+}
+
+.btn-edit {
+  background-color: #ffd966;
+  color: #333;
+}
+
+.btn-edit:hover {
+  background-color: #ffc107;
+}
+
+.btn-delete {
+  background-color: #ff6b6b;
+  color: #fff;
+}
+
+.btn-delete:hover {
+  background-color: #ff4c4c;
+}
+
+.segment-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.segment-table th,
+.segment-table td {
+  padding: 0.8rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #eee;
+}
+
+.segment-table th {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+.segment-table tr:hover {
+  background-color: #f9f9f9;
+}

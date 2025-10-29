@@ -1,0 +1,230 @@
+.project-manager {
+  padding: 2rem;
+  font-family: "Inter", sans-serif;
+  background: #f9fafb;
+  min-height: 100vh;
+  color: #1a1a1a;
+}
+
+/* Header */
+.header {
+  margin-top: -35%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.header h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.view-toggle {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.view-toggle button,
+.add-project-btn {
+  padding: 8px 14px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.view-toggle button:hover,
+.add-project-btn:hover {
+  background: #f0f0f0;
+}
+
+/* Projects layout */
+.projects-container.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+.projects-container.list,
+.projects-container.table {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.project-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.project-card h3 {
+  margin: 0;
+  font-size: 1.15rem;
+  cursor: pointer;
+}
+
+/* Inline input */
+.inline-input {
+  border: 1px solid #ccc;
+  padding: 6px 8px;
+  font-size: 1rem;
+  border-radius: 6px;
+  width: 100%;
+}
+
+.inline-input:focus {
+  border-color: #007bff;
+  background: #f9f9ff;
+}
+
+/* Actions */
+.project-actions button,
+.app-actions button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin-left: 0.4rem;
+  transition: transform 0.2s;
+}
+
+.project-actions button:hover,
+.app-actions button:hover {
+  transform: scale(1.2);
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 14px;
+  width: 450px;
+  max-height: 80vh;
+  overflow-y: auto;
+  animation: fadeIn 0.25s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: scale(0.95); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Apps */
+.apps-list {
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.app-row {
+  display: flex;
+  justify-content: space-between;
+  background: #f8f9fa;
+  padding: 8px 10px;
+  border-radius: 6px;
+}
+
+.app-row:hover {
+  background: #f0f0f0;
+}
+
+/* New App */
+.new-app {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.new-app input {
+  flex: 1;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* Share */
+.share-section {
+  margin: 1rem 0;
+}
+
+.multi-select {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0.5rem 0;
+}
+
+.multi-option {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 20px;
+  cursor: pointer;
+  background: #fafafa;
+  transition: all 0.2s;
+}
+
+.multi-option:hover {
+  background: #f0f0ff;
+}
+
+.multi-option.selected {
+  background: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.share-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.share-btn:hover {
+  background: #1e7e34;
+}
+
+/* Modal actions */
+.modal-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 1rem;
+}
+
+.modal-actions .primary {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+}
+
+.modal-actions button:hover {
+  opacity: 0.9;
+}

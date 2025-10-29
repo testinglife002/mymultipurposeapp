@@ -1,0 +1,359 @@
+.cat-manager {
+  padding: 20px;
+  font-family: "Inter", sans-serif;
+}
+
+.cat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.cat-header-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.btn.primary {
+  background: #712cf9;
+  color: #fff;
+}
+
+.btn.secondary {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.btn.warning {
+  background: #ffbc42;
+  color: #fff;
+}
+
+.btn.danger {
+  background: #ff4c4c;
+  color: #fff;
+}
+
+.btn.small {
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+.toggle-view {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.cat-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cat-table th,
+.cat-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.table-actions {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+}
+
+/* Tree View */
+.cat-tree {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px;
+  background: #fefefe;
+  font-size: 14px;
+}
+
+.tree-node {
+  margin-left: 16px;
+  position: relative;
+}
+
+.tree-node::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 10px;
+  width: 8px;
+  height: 1px;
+  background: #ccc;
+}
+
+.tree-node-content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0;
+}
+
+.tree-children {
+  margin-left: 20px;
+  border-left: 1px dashed #ddd;
+  padding-left: 8px;
+}
+
+.tree-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 6px;
+}
+
+.icon-btn.chevron {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-box {
+  background: #fff;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  padding: 16px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-form label {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.modal-form input,
+.modal-form textarea,
+.modal-form select {
+  width: 100%;
+  padding: 6px 8px;
+  margin-top: 4px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+
+.cat-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn.small {
+  padding: 4px 8px;
+  font-size: 13px;
+}
+
+.btn.primary {
+  background: #4a6cf7;
+  color: #fff;
+}
+.btn.primary:hover {
+  background: #3c57d3;
+  transform: translateY(-1px);
+}
+
+.btn.secondary {
+  background: #ddd;
+  color: #333;
+}
+.btn.secondary:hover {
+  background: #c5c5c5;
+}
+
+.btn.warning {
+  background: #f9a825;
+  color: #fff;
+}
+.btn.warning:hover {
+  background: #d18c1e;
+}
+
+.btn.danger {
+  background: #e53935;
+  color: #fff;
+}
+.btn.danger:hover {
+  background: #c62828;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.modal-form label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.modal-form input,
+.modal-form textarea,
+.modal-form select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.modal-form textarea {
+  resize: vertical;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+
+.cat-tree {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 12px;
+  background: #fefefe;
+  font-size: 14px;
+}
+
+.tree-node {
+  margin-left: 16px;
+  position: relative;
+}
+
+.tree-node::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 10px;
+  width: 8px;
+  height: 1px;
+  background: #ccc;
+}
+
+.tree-node-content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0;
+}
+
+.tree-children {
+  margin-left: 20px;
+  border-left: 1px dashed #ddd;
+  padding-left: 8px;
+}
+
+.tree-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 6px;
+}
+
+.icon-btn.chevron {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+}
+
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

@@ -1,0 +1,92 @@
+.app-mat-content-section {
+  margin-bottom: 2rem;
+}
+
+.app-mat-content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.app-mat-content-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.app-mat-view-toggle button {
+  background: none;
+  border: 1px solid #ccc;
+  padding: 0.3rem 0.6rem;
+  margin-left: 0.3rem;
+  cursor: pointer;
+  border-radius: 4px;
+  font-size: 1rem;
+  transition: all 0.2s;
+}
+
+.app-mat-view-toggle button.active,
+.app-mat-view-toggle button:hover {
+  background-color: #1976d2;
+  color: white;
+  border-color: #1976d2;
+}
+
+/* Grid */
+.app-mat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+/* List */
+.app-mat-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Board */
+.app-mat-board {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+}
+
+.app-mat-board-column {
+  min-width: 200px;
+  background: #f5f5f5;
+  padding: 0.5rem;
+  border-radius: 6px;
+}
+
+.app-mat-board-column h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+/* Cards */
+.app-mat-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+/* Table */
+.app-mat-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.app-mat-table th,
+.app-mat-table td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.app-mat-table th {
+  background-color: #f0f0f0;
+}

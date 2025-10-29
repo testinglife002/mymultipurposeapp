@@ -1,0 +1,45 @@
+.task-card {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.task-card-badges {
+  margin: 0.5rem 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.task-card-team {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+/* Badge colors (reused from Tasks.css) */
+.badge-high {
+  background-color: #dc3545 !important;
+  color: white !important;
+}
+.badge-medium {
+  background-color: #ffc107 !important;
+  color: black !important;
+}
+.badge-low {
+  background-color: #6c757d !important;
+  color: white !important;
+}
+.badge-info {
+  background-color: #0dcaf0 !important;
+  color: black !important;
+}
+.badge-stage {
+  background-color: #f8f9fa !important;
+  color: black !important;
+}

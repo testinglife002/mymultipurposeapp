@@ -1,0 +1,208 @@
+/* Page wrapper */
+.cat-page {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* full viewport height */
+  padding: 20px;
+  box-sizing: border-box;
+  background-color: #f5f5f5;
+}
+
+/* Header with Add button */
+.cat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.cat-header h3 {
+  font-size: 28px;
+  font-family: "Playfair Display", serif;
+  color: #333;
+}
+
+.cat-add-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 16px;
+  background: #fe8686;
+  color: #fff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.cat-add-btn:hover {
+  background: #e65a5a;
+  transform: translateY(-2px);
+}
+
+/* Table wrapper with vertical + horizontal scroll */
+.cat-table-wrapper {
+  flex: 1; /* fill remaining height */
+  max-height: calc(100vh - 120px); /* adjust for header/footer */
+  overflow-x: auto; /* horizontal scroll */
+  overflow-y: auto; /* vertical scroll */
+  -webkit-overflow-scrolling: touch; /* smooth scrolling on iOS */
+  border: 1px solid #e0e0e0;
+  border-radius: 6px;
+  background-color: #fff;
+  padding: 10px;
+
+  /* Firefox scrollbar */
+  scrollbar-width: thin;
+  scrollbar-color: #c1c1c1 #f1f1f1;
+}
+
+/* WebKit scrollbar (Chrome, Safari, Edge) */
+.cat-table-wrapper::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.cat-table-wrapper::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+
+.cat-table-wrapper::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 5px;
+}
+
+.cat-table-wrapper::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
+
+/* Table */
+.cat-table {
+  width: 100%;
+  min-width: 600px; /* ensure horizontal scroll on small screens */
+  border-collapse: collapse;
+}
+
+/* Sticky headers */
+.cat-table thead th {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 2;
+  box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+/* Table cells */
+.cat-table th,
+.cat-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.cat-table tbody tr:hover {
+  background-color: #f9f9f9;
+}
+
+.cat-table tbody tr {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: rowFade 0.4s forwards;
+}
+
+/* Sequential animation delay */
+.cat-table tbody tr:nth-child(1) { animation-delay: 0.05s; }
+.cat-table tbody tr:nth-child(2) { animation-delay: 0.1s; }
+.cat-table tbody tr:nth-child(3) { animation-delay: 0.15s; }
+.cat-table tbody tr:nth-child(4) { animation-delay: 0.2s; }
+.cat-table tbody tr:nth-child(5) { animation-delay: 0.25s; }
+.cat-table tbody tr:nth-child(6) { animation-delay: 0.3s; }
+.cat-table tbody tr:nth-child(7) { animation-delay: 0.35s; }
+.cat-table tbody tr:nth-child(8) { animation-delay: 0.4s; }
+.cat-table tbody tr:nth-child(9) { animation-delay: 0.45s; }
+.cat-table tbody tr:nth-child(10) { animation-delay: 0.5s; }
+
+/* Slug styling */
+.cat-slug {
+  font-family: monospace;
+  color: #777;
+}
+
+/* Empty message */
+.cat-empty {
+  text-align: center;
+  padding: 30px 0;
+  font-style: italic;
+  color: #888;
+}
+
+/* Actions buttons */
+.cat-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.cat-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.cat-edit {
+  background: #86c5fe;
+  color: #fff;
+}
+
+.cat-edit:hover {
+  background: #4aa3f0;
+}
+
+.cat-delete {
+  background: #fe8686;
+  color: #fff;
+}
+
+.cat-delete:hover {
+  background: #e65a5a;
+}
+
+/* Animations */
+@keyframes rowFade {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cat-page {
+    padding: 15px;
+  }
+
+  .cat-header h3 {
+    font-size: 22px;
+  }
+
+  .cat-table th,
+  .cat-table td {
+    font-size: 14px;
+    padding: 10px;
+  }
+
+  /* Ensure table scrolls horizontally on small screens */
+  .cat-table {
+    min-width: 500px;
+  }
+}

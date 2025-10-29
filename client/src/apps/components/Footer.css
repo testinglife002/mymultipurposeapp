@@ -1,0 +1,13 @@
+.app-mat-footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1rem 0;
+  background-color: #3700b3;
+  color: white;
+  font-size: 0.9rem;
+  border-top: 1px solid #ddd;
+}
+
+.app-mat-footer-text {
+  margin: 0;
+}

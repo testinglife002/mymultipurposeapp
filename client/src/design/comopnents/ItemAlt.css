@@ -1,0 +1,49 @@
+/* Outer container */
+.item-container {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  padding: 0 8px; /* same as px-2 */
+}
+
+/* Link wrapper */
+.item-link {
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 16px;                /* p-4 */
+  background-color: rgba(255, 255, 255, 0.07); /* #ffffff12 */
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+/* Image */
+.item-image {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Trash icon (hidden by default) */
+.item-delete {
+  position: absolute;
+  top: 4px;     /* top-1 */
+  right: 12px;   /* right-2 */
+  color: #ef4444; /* text-red-500 */
+  background-color: antiquewhite;
+  padding: 8px;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  border-radius: 2px;
+}
+
+/* Show delete button on hover */
+.item-container:hover .item-delete {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}

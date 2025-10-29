@@ -1,0 +1,22 @@
+/* GrapesJS sidebar collapsible categories */
+.gjs-block-category {
+  transition: 0.3s;
+}
+.gjs-block-category-title {
+  cursor: pointer;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.cat-arrow {
+  display: inline-block;
+  transition: transform 0.3s ease;
+  font-size: 12px;
+}
+.gjs-block-category.collapsed .cat-arrow {
+  transform: rotate(90deg);
+}
+.gjs-block-category.collapsed .gjs-blocks-c {
+  display: none;
+}

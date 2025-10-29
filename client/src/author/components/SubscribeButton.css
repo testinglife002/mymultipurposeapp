@@ -1,0 +1,28 @@
+.subscribe-btn {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  background: #2575fc;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.subscribe-btn:hover {
+  background: #145acc;
+  transform: translateY(-2px);
+}
+
+.subscribe-btn.subscribed {
+  background: #aaa;
+  cursor: default;
+}
+
+.subscribe-btn.subscribed:hover {
+  transform: none;
+  background: #888;
+}

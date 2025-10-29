@@ -1,0 +1,6 @@
+.title-heading {
+  font-size: 1.25rem;   /* Bootstrap fs-4 */
+  font-weight: 600;     /* fw-semibold */
+  text-transform: capitalize; /* text-capitalize */
+  margin: 0;
+}

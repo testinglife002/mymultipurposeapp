@@ -1,0 +1,7 @@
+/* 14️⃣ GradientStroke.css */
+.gradientStroke {
+  color: transparent;
+  -webkit-text-stroke: 2px var(--color1, #fff);
+  background: linear-gradient(90deg, var(--color1, #ff7a18), var(--color2, #ffd200));
+  -webkit-background-clip: text;
+}

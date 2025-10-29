@@ -1,0 +1,154 @@
+/* Modal overlay */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 60px;
+  z-index: 1000;
+}
+
+/* Modal content */
+.modal-content.create-board-modal {
+  background: #1e1e1e;
+  color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  width: 500px;
+  max-width: 95%;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+  animation: fadeIn 0.3s ease;
+}
+
+/* Scrollbar */
+.modal-content.create-board-modal::-webkit-scrollbar {
+  width: 8px;
+}
+.modal-content.create-board-modal::-webkit-scrollbar-track {
+  background: #2a2a2a;
+  border-radius: 8px;
+}
+.modal-content.create-board-modal::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 8px;
+}
+.modal-content.create-board-modal::-webkit-scrollbar-thumb:hover {
+  background: #888;
+}
+.modal-content.create-board-modal {
+  scrollbar-width: thin;
+  scrollbar-color: #555 #2a2a2a;
+}
+
+/* Inputs and textareas */
+.dark-input {
+  width: 100%;
+  padding: 8px 12px;
+  margin: 6px 0 12px 0;
+  border: 1px solid #555;
+  border-radius: 6px;
+  background: #2a2a2a;
+  color: #fff;
+}
+
+.dark-input::placeholder {
+  color: #bbb;
+}
+
+/* Labels */
+label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+/* Modal controls: color picker + file input */
+.modal-controls {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+/* Background preview */
+.background-preview {
+  border-radius: 6px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #aaa;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 12px;
+  background-color: #2a2a2a;
+}
+
+/* Modal header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+/* Close icon */
+.btn-icon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+}
+
+.btn-icon:hover {
+  color: #ccc;
+}
+
+/* Action buttons */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.btn-primary {
+  background-color: #0079bf;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-primary:hover {
+  background-color: #005a8d;
+}
+
+.btn-cancel {
+  background-color: #333;
+  color: #fff;
+  padding: 8px 16px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-cancel:hover {
+  background-color: #555;
+}
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

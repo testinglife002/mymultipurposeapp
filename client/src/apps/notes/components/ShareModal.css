@@ -1,0 +1,94 @@
+.share-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 0;
+}
+/* === Share Modal (glassmorphic + animation) === */
+
+.MuiModal-root {
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.45) !important;
+  transition: background-color 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Modal content box */
+.MuiBox-root {
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 16px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25);
+  animation: fadeInUp 0.35s ease forwards;
+  transform-origin: center center;
+  overflow: hidden;
+}
+
+/* Header text */
+.MuiTypography-h6 {
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: #1a1a1a;
+  text-align: center;
+}
+
+/* User list */
+.MuiList-root {
+  max-height: 50vh;
+  overflow-y: auto;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  padding: 4px 0;
+}
+
+/* Scrollbar styling for user list */
+.MuiList-root::-webkit-scrollbar {
+  width: 8px;
+}
+.MuiList-root::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+}
+
+/* List items */
+.MuiListItem-root {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  transition: background-color 0.2s ease;
+  border-radius: 8px;
+  margin: 2px 4px;
+}
+.MuiListItem-root:hover {
+  background-color: rgba(0, 123, 255, 0.08);
+}
+
+/* Buttons */
+.MuiButton-root {
+  text-transform: none !important;
+  border-radius: 10px !important;
+  transition: all 0.2s ease;
+}
+.MuiButton-contained {
+  background-color: #1976d2 !important;
+  color: #fff !important;
+  font-weight: 500;
+}
+.MuiButton-contained:hover {
+  background-color: #1256a0 !important;
+}
+.MuiButton-text:hover {
+  background-color: rgba(25, 118, 210, 0.1) !important;
+}
+
+/* Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(25px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

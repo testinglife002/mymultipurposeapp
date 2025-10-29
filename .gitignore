@@ -1,0 +1,49 @@
+# dependencies
+node_modules/
+**/node_modules/
+
+# environment files
+.env
+**/.env
+*.local
+**/*.local
+api/.env
+client/.env
+
+# build outputs
+client/dist/
+coverage/
+
+# logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# OS / editor files
+
+
+
+
+dist/
+build/
+.vscode/
+.DS_Store
+.env
+.env.local
+.env.*.local
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+/.vite-cache/
+/client/dist/
+/client/node_modules/
+/api/node_modules/
+/api/public/uploads/    # do not commit uploads
+
+# Mac/Windows
+Thumbs.db
+Desktop.ini
+

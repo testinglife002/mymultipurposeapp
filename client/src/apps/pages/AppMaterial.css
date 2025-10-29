@@ -1,0 +1,229 @@
+/* Layout */
+.app {
+  font-family: 'Inter', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  
+}
+
+.app.light-mode .todo-sidebar,
+.app.light-mode .sub-sidebar {
+  background-color: #f8fafc;
+  color: #1e293b;
+  border-right: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.app.light-mode .todo-nav-item:hover,
+.app.light-mode .sub-nav-item:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+
+.app.dark-mode {
+  background-color: #121212;
+  color: #fff;
+}
+
+/* Full-width header */
+header {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+/* Main horizontal layout */
+.app-mat-main-layout {
+  display: flex;
+  flex: 1;
+  width: 100%;
+  height: calc(100vh - 64px); /* assuming header height 64px */
+  overflow: hidden;
+  
+}
+
+/* Sidebar + SubSidebar + Main Outlet */
+.sidebar,
+.sub-sidebar,
+.todo-sidebar {
+  flex-shrink: 0;
+  height: 100%;
+}
+
+.app-main-outlet {
+  flex: 1;
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  background: #fff;
+  padding: 0;      /* no padding */
+  margin: 0;       /* no margin */
+}
+
+
+/*
+.app-mat-main-content-wrapper {
+  flex: 1;
+  max-width: 850px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  overflow-y: auto;
+}
+*/
+
+/* Sidebar
+.sidebar {
+  min-width: 220px;
+  height: 100vh;
+  background-color: #1f1f1f;
+  color: #ccc;
+  transition: width 0.3s;
+}
+
+.sidebar.open {
+  width: 250px;
+}
+
+.sidebar.collapsed {
+  width: 80px;
+}
+
+.sidebar .toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+}
+
+.sidebar li.active,
+.sidebar li:hover {
+  background-color: #6200ee;
+  color: white;
+}
+ */
+
+/* SubSidebar 
+.subsidebar {
+  width: 180px;
+  background-color: #2c2c2c;
+  color: #ccc;
+  transition: width 0.3s;
+}
+
+.subsidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.subsidebar li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.subsidebar li.active,
+.subsidebar li:hover {
+  background-color: #3700b3;
+  color: white;
+}
+*/
+
+/* Header / AppBar */
+.appbar-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background-color: #6200ee;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  z-index: 1500;
+}
+
+/* Hero Section 
+.hero {
+  background: #bb86fc;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  color: white;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+*/
+
+/* Slideshow 
+.slideshow {
+  margin-bottom: 2rem;
+}
+*/
+
+/* Content Section */
+.content .view-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.articles.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.articles.list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.article-card {
+  background: white;
+  padding: 1rem;
+  border-radius: 0.4rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+/* Widgets Section */
+.widgets {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+/* Footer */
+.footer {
+  background: #3700b3;
+  color: white;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Tabs */
+.nav-tabs .nav-link {
+  text-align: left;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+}
+
+.nav-tabs .nav-link.active {
+  background-color: #007bff;
+  color: white;
+}

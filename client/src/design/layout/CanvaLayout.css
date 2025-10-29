@@ -1,0 +1,218 @@
+/* Root Container */
+.canva-layout-container {
+  background-color: #18191b;
+  min-height: 100vh;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Navbar */
+.canva-layout-navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 70px;
+  background-color: #111;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+  z-index: 2000;
+}
+
+/* Navbar Left overlaps sidebar */
+.canva-layout-navbar-left {
+  position: relative;
+  z-index: 2100;
+}
+.canva-layout-navbar-logo {
+  height: 40px;
+}
+
+/* Navbar Right */
+.canva-layout-navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Create Button */
+.canva-create-btn {
+  background-color: #8b3dff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #fff;
+  transition: background-color 0.2s ease;
+}
+.canva-create-btn:hover {
+  background-color: #9553f8;
+}
+
+/* Profile Dropdown */
+.canva-layout-profile-dropdown {
+  position: relative;
+  z-index: 2200;
+}
+.canva-layout-profile-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+.canva-layout-profile-avatar:hover {
+  border-color: #8b3dff;
+}
+
+.canva-layout-dropdown-menu {
+  position: absolute;
+  top: 60px;
+  right: 0;
+  background-color: #313030;
+  border: 1px solid #444;
+  border-radius: 10px;
+  width: 220px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 0.15s ease-in;
+  overflow: hidden;
+  z-index: 2300;
+}
+
+/* Dropdown User Info */
+.canva-layout-dropdown-user {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.7rem 1rem;
+}
+.canva-layout-dropdown-user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.canva-layout-dropdown-username {
+  font-weight: 600;
+  color: white;
+}
+.canva-layout-dropdown-email {
+  color: #aaa;
+  font-size: 0.8rem;
+}
+.canva-layout-dropdown-divider {
+  height: 1px;
+  background-color: #444;
+  margin: 0.3rem 0;
+}
+.canva-layout-dropdown-item {
+  width: 100%;
+  background: none;
+  border: none;
+  color: white;
+  text-align: left;
+  padding: 0.6rem 1rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+.canva-layout-dropdown-item:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Sidebar */
+.canva-layout-sidebar {
+  width: 220px;
+  height: calc(100vh - 70px);
+  background-color: #141414;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 1.5rem;
+  box-shadow: inset -1px 0 0 #222;
+  z-index: 1000;
+}
+
+/* Sidebar Profile */
+.canva-layout-sidebar-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.canva-layout-sidebar-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+.canva-layout-sidebar-username {
+  margin-top: 0.5rem;
+  font-weight: 600;
+}
+.canva-layout-sidebar-plan {
+  font-size: 0.8rem;
+  color: #aaa;
+}
+
+/* Sidebar Links */
+.canva-layout-sidebar-links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  width: 100%;
+}
+.canva-layout-sidebar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  color: #ccc;
+  text-decoration: none;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+.canva-layout-sidebar-link:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: #fff;
+}
+.canva-layout-sidebar-link.active {
+  background-color: rgba(255, 255, 255, 0.15);
+  color: #fff;
+}
+
+/* Main Content */
+/* Main Content */
+.canva-layout-content-area {
+  margin-left: 300px;  /* width of sidebar */
+  margin-top: 70px;    /* height of navbar */
+  padding: 2rem;
+  flex: 1;
+  background-color: #18191b;
+  min-height: calc(100vh - 70px);
+  position: relative;
+  z-index: 1; /* ensure content is above background but below dropdowns/navbar */
+  overflow: auto; /* allow scrolling if content overflows */
+}
+
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

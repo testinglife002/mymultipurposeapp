@@ -1,0 +1,66 @@
+/* src/components/BlogPostsList.css */
+
+.gordius-blog-posts-list {
+  padding: 2rem 1rem;
+  font-family: 'Josefin Sans', sans-serif;
+  color: #333;
+}
+
+.gordius-blog-posts-list h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  color: #712cf9;
+}
+
+.gordius-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.gordius-post-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.gordius-post-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.gordius-post-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.gordius-post-content {
+  padding: 1rem;
+}
+
+.gordius-post-content h3 {
+  font-size: 1.25rem;
+  margin: 0 0 0.25rem 0;
+}
+
+.gordius-post-content p {
+  font-size: 0.9rem;
+  margin: 0.5rem 0 1rem 0;
+  color: #555;
+}
+
+.gordius-post-content a {
+  color: #ff6f61;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+.gordius-post-content a svg {
+  margin-left: 0.25rem;
+}

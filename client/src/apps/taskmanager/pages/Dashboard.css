@@ -1,0 +1,250 @@
+.dashboard {
+  padding: 1rem;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1rem;
+}
+
+.stat-card {
+  background: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.stat-label {
+  color: #666;
+  font-size: 14px;
+}
+
+.stat-total {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.stat-subtext {
+  color: #999;
+  font-size: 12px;
+}
+
+.stat-icon {
+  color: white;
+  background: rgba(0, 0, 0, 0.1);
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Background colors */
+.bg-blue { background: #1d4ed8; color: #fff; }
+.bg-green { background: #0f766e; color: #fff; }
+.bg-yellow { background: #f59e0b; color: #fff; }
+.bg-pink { background: #be185d; color: #fff; }
+
+.chart-section {
+  background: #fff;
+  margin: 2rem 0;
+  padding: 1.25rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08);
+}
+
+.chart-section h4 {
+  font-size: 18px;
+  color: #444;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.tables-section {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Task Table */
+.task-table-container {
+  flex: 2;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+.task-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.task-table th, .task-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.task-table tr:hover {
+  background-color: #f9f9f9;
+}
+
+.task-title-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.task-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.priority-cell {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.team-avatars {
+  display: flex;
+}
+
+.avatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: -5px;
+}
+
+.hide-mobile {
+  display: table-cell;
+}
+
+@media (max-width: 768px) {
+  .hide-mobile {
+    display: none;
+  }
+}
+
+/* User Table */
+.user-table-container {
+  flex: 1;
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table th, .user-table td {
+  padding: 10px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.user-info-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-avatar {
+  width: 36px;
+  height: 36px;
+  background: #7c3aed;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.role-text {
+  color: #666;
+  font-size: 12px;
+}
+
+.status-badge {
+  padding: 5px 10px;
+  border-radius: 999px;
+  font-size: 13px;
+}
+
+.status-badge.active {
+  background: #dbeafe;
+  color: #1e40af;
+}
+
+.status-badge.disabled {
+  background: #fef9c3;
+  color: #92400e;
+}
+
+/* Task type color dots */
+.bg-blue-600 { background-color: #2563eb; }
+.bg-yellow-600 { background-color: #ca8a04; }
+.bg-green-600 { background-color: #16a34a; }
+.bg-red-600 { background-color: #dc2626; }
+
+
+.user-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  overflow: hidden;
+}
+
+.avatar-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.status-badge.active {
+  background-color: #d1f7d1;
+  color: #1a7f1a;
+}
+
+.status-badge.disabled {
+  background-color: #f9d2d2;
+  color: #a51d1d;
+}
+
+.verify-badge.verified {
+  background-color: #d0ebff;
+  color: #0b5394;
+}
+
+.verify-badge.unverified {
+  background-color: #ffe8cc;
+  color: #a65e00;
+}

@@ -1,0 +1,24 @@
+/* ====== TICKER ====== */
+.ticker-wrapper {
+  background: #0d6efd;
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 2px 0;
+  font-weight: 500;
+  margin-top: 0%;
+}
+.ticker {
+  display: inline-block;
+  animation: ticker-scroll 20s linear infinite;
+}
+.ticker span {
+  margin-right: 40px;
+}
+.ticker-wrapper:hover .ticker {
+  animation-play-state: paused;
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}

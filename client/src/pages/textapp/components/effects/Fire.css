@@ -1,0 +1,14 @@
+/* 5️⃣ Fire.css */
+.fire {
+  color: var(--color1, #ff4d00);
+  text-shadow:
+    0 0 5px var(--color2, #ff9100),
+    0 0 10px var(--color3, #ffd200),
+    0 0 20px var(--color1, #ff4d00);
+  animation: firePulse 1.2s infinite ease-in-out;
+}
+
+@keyframes firePulse {
+  0%, 100% { text-shadow: 0 0 10px var(--color2); }
+  50% { text-shadow: 0 0 20px var(--color3); }
+}

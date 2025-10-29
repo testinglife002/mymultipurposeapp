@@ -1,0 +1,9 @@
+:root{
+  --bg:#f7f8fb;
+  --panel:#fff;
+  --muted:#666;
+  --accent:#3b82f6;
+}
+
+*{box-sizing:border-box;}
+body, html, #root {height:100%; margin:0; font-family:Inter, system-ui, Arial;}

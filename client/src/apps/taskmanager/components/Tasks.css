@@ -1,0 +1,155 @@
+.tasks-container {
+  padding-top: 2rem;
+}
+
+.tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tasks-toggle {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.task-card {
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+.task-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.badge {
+  margin-right: 6px;
+  font-weight: 500;
+  border-radius: 6px;
+}
+.badge-high {
+  background: #ffe2e2;
+  color: #b91c1c;
+}
+.badge-medium {
+  background: #fff3cd;
+  color: #92400e;
+}
+.badge-normal {
+  background: #e0f7fa;
+  color: #065f46;
+}
+.badge-low {
+  background: #f3f4f6;
+  color: #1f2937;
+}
+.badge-stage {
+  background: #e5e7eb;
+  color: #374151;
+}
+
+.board-view {
+  display: flex;
+  gap: 1rem;
+  overflow-x: hidden;
+  padding: 1rem 0;
+}
+
+.board-column {
+  flex: 1;
+  min-width: 280px;
+  background: #f9fafb;
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+.board-title {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.list-view .list-item {
+  padding: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.list-view .list-item:hover {
+  background: #f9fafb;
+}
+
+.table-view {
+  background: #fff;
+  border-radius: 8px;
+}
+
+/*
+.task-card {
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+*/
+
+.task-badges {
+  margin: 0.5rem 0;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.task-team {
+  margin-top: 0.5rem;
+  display: flex;
+  gap: 0.25rem;
+  flex-wrap: wrap;
+}
+
+.task-table th {
+  background: #222;
+  color: #fff;
+}
+.task-table td, .task-table th {
+  padding: 0.75rem;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  padding: 3rem 0;
+}
+
+/* Badge Colors */
+.badge-high {
+  background-color: #dc3545 !important; /* red */
+  color: white !important;
+}
+.badge-medium {
+  background-color: #ffc107 !important; /* yellow */
+  color: black !important;
+}
+.badge-low {
+  background-color: #6c757d !important; /* gray */
+  color: white !important;
+}
+.badge-info {
+  background-color: #0dcaf0 !important;
+  color: black !important;
+}
+.badge-stage {
+  background-color: #f8f9fa !important;
+  color: black !important;
+}

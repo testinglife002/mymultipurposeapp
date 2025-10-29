@@ -1,0 +1,8 @@
+/* 🔟 ThreeDText.css */
+.threeDText {
+  color: var(--color1, #fff);
+  text-shadow:
+    1px 1px var(--color2, #aaa),
+    2px 2px var(--color3, #666),
+    3px 3px var(--color4, #333);
+}

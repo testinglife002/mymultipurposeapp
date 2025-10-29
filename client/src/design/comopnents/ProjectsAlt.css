@@ -1,0 +1,55 @@
+.projects-container {
+  margin-top: 10px;
+  height: 88vh;
+  overflow-y: auto;
+  padding: 10px;
+  background-color: #000;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+}
+
+.project-card {
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  background-color: #1f1f1f;
+  transition: transform 0.2s ease;
+}
+
+.project-card:hover {
+  transform: scale(1.03);
+}
+
+.project-image {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  display: block;
+}
+
+.delete-btn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  border: none;
+  background: rgba(255, 255, 255, 0.1);
+  color: red;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.delete-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.status-text {
+  color: #fff;
+  text-align: center;
+  padding: 20px;
+}

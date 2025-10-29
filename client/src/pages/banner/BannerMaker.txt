@@ -1,0 +1,742 @@
+// BannerMaker.jsx (React functional component)
+import React, { useRef, useState, useEffect } from "react";
+import axios from "axios";
+import newRequest from "../../api/newRequest";
+// import { toPng } from "html-to-image";
+import "./BannerMaker.css";
+
+const BLEND_MODES = [
+  "normal","multiply","screen","overlay","darken","lighten","color-dodge","color-burn",
+  "hard-light","soft-light","difference","exclusion","hue","saturation","color","luminosity"
+];
+
+export default function BannerMaker() {
+  const [bgFile, setBgFile] = useState(null);
+  const [mainFile, setMainFile] = useState(null);
+  const [bgUrl, setBgUrl] = useState("");
+  const [mainUrl, setMainUrl] = useState("");
+  const [blendMode, setBlendMode] = useState("overlay");
+  const [opacity, setOpacity] = useState(1);
+  const [filter, setFilter] = useState("none");
+  const [scale, setScale] = useState(1);
+  const [rotation, setRotation] = useState(0); // in degrees
+  const [flipH, setFlipH] = useState(false);
+  const [flipV, setFlipV] = useState(false);
+
+  const [layers, setLayers] = useState([]); // all layers
+  const [activeLayer, setActiveLayer] = useState(null);
+  const [history, setHistory] = useState([]);
+  const [historyIndex, setHistoryIndex] = useState(-1);
+
+  // main image position & size (stateful)
+  const [pos, setPos] = useState({ x: 0, y: 0 });
+  const [size, setSize] = useState({ w: 400, h: 300 });
+
+  const canvasRef = useRef(null);
+  const canvaRef = useRef(null);
+  const bgImgRef = useRef(null);
+  const mainRef = useRef(null);
+  
+  // drag/resize state
+  const dragging = useRef(false);
+  const resizing = useRef(false);
+  // const dragStart = useRef({ x: 0, y: 0 });
+  const resizeStart = useRef({ w: 0, h: 0 });
+
+  // const dragging = useRef(false);
+  const dragTarget = useRef(null);
+  const dragStart = useRef({ x: 0, y: 0, sx: 0, sy: 0 });
+
+   // ---------- LAYER SYSTEM ----------
+  const addLayer = async (file, type = "main") => {
+    const localUrl = URL.createObjectURL(file);
+    const form = new FormData();
+    form.append("image", file);
+    const res = await newRequest.post("/uploads", form, {
+      headers: { "Content-Type": "multipart/form-data" },
+    });
+    const newLayer = {
+      id: Date.now().toString(),
+      type,
+      url: res.data.secure_url,
+      pos: { x: 100, y: 100 },
+      size: { w: type === "background" ? 900 : 400, h: type === "background" ? 400 : 300 },
+      scale: 1,
+      rotation: 0,
+      opacity: 1,
+      blendMode: "normal",
+      filter: "none",
+      clip: null,
+      zIndex: layers.length,
+      effects: {
+        glow: false,
+        blurEdges: false,
+        vignette: false,
+        shine: false
+      }
+    };
+    const updated = [...layers, newLayer];
+    setLayers(updated);
+    pushHistory(updated);
+  };
+
+  const pushHistory = (snapshot) => {
+    const newHist = history.slice(0, historyIndex + 1);
+    newHist.push(JSON.parse(JSON.stringify(snapshot)));
+    setHistory(newHist);
+    setHistoryIndex(newHist.length - 1);
+  };
+  const undo = () => {
+    if (historyIndex > 0) {
+      setHistoryIndex(historyIndex - 1);
+      setLayers(JSON.parse(JSON.stringify(history[historyIndex - 1])));
+    }
+  };
+  const redo = () => {
+    if (historyIndex < history.length - 1) {
+      setHistoryIndex(historyIndex + 1);
+      setLayers(JSON.parse(JSON.stringify(history[historyIndex + 1])));
+    }
+  };
+
+  // ---------- DRAG / RESIZE ----------
+  const onPointerDown = (e, layerId) => {
+    e.preventDefault();
+    const layer = layers.find(l => l.id === layerId);
+    if (!layer) return;
+    dragging.current = true;
+    setActiveLayer(layerId);
+    dragStart.current = {
+      x: e.clientX,
+      y: e.clientY,
+      sx: layer.pos.x,
+      sy: layer.pos.y
+    };
+  };
+  const onPointerMove = (e) => {
+    if (!dragging.current && !resizing.current) return;
+    const dx = e.clientX - dragStart.current.x;
+    const dy = e.clientY - dragStart.current.y;
+    if (dragging.current && activeLayer) {
+      setLayers(prev =>
+        prev.map(l =>
+          l.id === activeLayer
+            ? { ...l, pos: { x: dragStart.current.sx + dx, y: dragStart.current.sy + dy } }
+            : l
+        )
+      );
+    } else if (resizing.current && activeLayer) {
+      setLayers(prev =>
+        prev.map(l =>
+          l.id === activeLayer
+            ? {
+                ...l,
+                size: {
+                  w: Math.max(50, resizeStart.current.w + dx),
+                  h: Math.max(50, resizeStart.current.h + dy)
+                }
+              }
+            : l
+        )
+      );
+    }
+  };
+  const onPointerUp = () => {
+    if (dragging.current || resizing.current) pushHistory(layers);
+    dragging.current = false;
+    resizing.current = false;
+  };
+
+  useEffect(() => {
+    window.addEventListener("pointermove", onPointerMove);
+    window.addEventListener("pointerup", onPointerUp);
+    return () => {
+      window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerup", onPointerUp);
+    };
+  }, [layers, activeLayer]);
+
+  const startResize = (e, layerId) => {
+    e.stopPropagation();
+    resizing.current = true;
+    setActiveLayer(layerId);
+    const layer = layers.find(l => l.id === layerId);
+    resizeStart.current = { x: e.clientX, y: e.clientY, w: layer.size.w, h: layer.size.h };
+  };
+
+   // Load images
+  const loadImage = (url) => {
+    return new Promise((resolve, reject) => {
+      const img = new Image();
+      img.crossOrigin = "anonymous";
+      img.onload = () => resolve(img);
+      img.onerror = reject;
+      img.src = url;
+    });
+  };
+
+  // Upload file to backend which uploads to Cloudinary
+  const handleFileUpload = async (file, setUrl) => {
+    const localUrl = URL.createObjectURL(file);
+    setUrl(localUrl);
+    try {
+      const form = new FormData();
+      form.append("image", file);
+      const res = await newRequest.post("/uploads", form, {
+        headers: { "Content-Type": "multipart/form-data" }
+        });
+      setUrl(res.data.secure_url);
+    } catch (err) {
+      console.error(err);
+    }
+  };
+
+  const handleBgChoose = async (e) => {
+    const f = e.target.files[0];
+    setBgFile(f);
+    const url = URL.createObjectURL(f);
+    setBgUrl(url); // local preview while server upload happens
+    try {
+      const cloudUrl = await uploadToServer(f);
+      setBgUrl(cloudUrl);
+    } catch (err) {
+      console.error("bg upload error", err);
+    }
+  };
+
+  const handleMainChoose = async (e) => {
+    const f = e.target.files[0];
+    setMainFile(f);
+    const url = URL.createObjectURL(f);
+    setMainUrl(url);
+    try {
+      const cloudUrl = await uploadToServer(f);
+      setMainUrl(cloudUrl);
+    } catch (err) {
+      console.error("main upload error", err);
+    }
+  };
+
+  // Dragging (pointer events)
+  useEffect(() => {
+    const img = mainRef.current;
+    if (!img) return;
+
+    const onDownPointer = (ev) => {
+      ev.preventDefault();
+      dragging.current = true;
+      img.setPointerCapture(ev.pointerId);
+      dragStart.current = {
+        x: ev.clientX,
+        y: ev.clientY,
+        sx: pos.x,
+        sy: pos.y
+      };
+    };
+    const onMovePointer = (ev) => {
+      if (!dragging.current) return;
+      const dx = ev.clientX - dragStart.current.x;
+      const dy = ev.clientY - dragStart.current.y;
+      setPos({ x: dragStart.current.sx + dx, y: dragStart.current.sy + dy });
+    };
+    const onUpPointer = (ev) => {
+      dragging.current = false;
+      try { img.releasePointerCapture(ev.pointerId); } catch {}
+    };
+
+    img.addEventListener("pointerdown", onDownPointer);
+    window.addEventListener("pointermove", onMovePointer);
+    window.addEventListener("pointerup", onUpPointer);
+
+    return () => {
+      img.removeEventListener("pointerdown", onDownPointer);
+      window.removeEventListener("pointermove", onMovePointer);
+      window.removeEventListener("pointerup", onUpPointer);
+    };
+  }, [pos]);
+  
+  
+  // Drag & Drop handler
+  /*
+  const onPointerDown = (ev, target) => {
+    ev.preventDefault();
+    dragging.current = true;
+    dragTarget.current = target;
+    dragStart.current = {
+      x: ev.clientX,
+      y: ev.clientY,
+      sx: target === "main" ? pos.x : 0,
+      sy: target === "main" ? pos.y : 0
+    };
+  };
+
+  const onPointerMove = (ev) => {
+    if (!dragging.current) return;
+    const dx = ev.clientX - dragStart.current.x;
+    const dy = ev.clientY - dragStart.current.y;
+    if (dragTarget.current === "main") {
+      setPos({ x: dragStart.current.sx + dx, y: dragStart.current.sy + dy });
+    }
+  };
+
+  const onPointerUp = () => {
+    dragging.current = false;
+  };
+
+  useEffect(() => {
+    window.addEventListener("pointermove", onPointerMove);
+    window.addEventListener("pointerup", onPointerUp);
+    return () => {
+      window.removeEventListener("pointermove", onPointerMove);
+      window.removeEventListener("pointerup", onPointerUp);
+    };
+  }, []);
+  */
+
+  // Resize handle logic
+  const onResizePointerDown = (ev) => {
+    ev.stopPropagation();
+    ev.preventDefault();
+    dragging.current = true;
+    dragStart.current = {
+      x: ev.clientX,
+      y: ev.clientY,
+      w: size.w,
+      h: size.h
+    };
+    const onMove = (e) => {
+      const dx = e.clientX - dragStart.current.x;
+      const dy = e.clientY - dragStart.current.y;
+      setSize({
+        w: Math.max(50, dragStart.current.w + dx),
+        h: Math.max(50, dragStart.current.h + dy)
+      });
+    };
+    const onUp = () => {
+      dragging.current = false;
+      window.removeEventListener("pointermove", onMove);
+      window.removeEventListener("pointerup", onUp);
+    };
+    window.addEventListener("pointermove", onMove);
+    window.addEventListener("pointerup", onUp);
+  };
+
+  // Export canvas: convert DOM -> PNG using html-to-image, then POST to server
+  /*
+  const handleExport = async () => {
+    if (!canvasRef.current) return;
+    try {
+      const dataUrl = await toPng(canvasRef.current, { cacheBust: true, width: canvasRef.current.offsetWidth, height: canvasRef.current.offsetHeight });
+
+      // Send base64 to server for local save + cloud upload
+      const res = await newRequest.post("/banner/export", {
+        dataUrl,
+        backgroundUrl: bgUrl,
+        mainUrl: mainUrl
+      });
+
+      alert(`Saved: local=${res.data.localPath} cloud=${res.data.cloudUrl}`);
+      // optionally open cloud url
+      window.open(res.data.cloudUrl, "_blank");
+    } catch (err) {
+      console.error("export error", err);
+      alert("Export failed: " + err.message);
+    }
+  };
+  */
+  
+  // Pure canvas export
+  const handleExport = async () => {
+    if (!canvasRef.current) return;
+    try {
+      const canvas = document.createElement("canvas");
+      const rect = canvasRef.current.getBoundingClientRect();
+      const dpr = window.devicePixelRatio || 2;
+      canvas.width = rect.width * dpr;
+      canvas.height = rect.height * dpr;
+      const ctx = canvas.getContext("2d");
+      ctx.scale(dpr, dpr);
+
+      // Draw background
+      if (bgUrl) {
+        const bgImg = await loadImage(bgUrl);
+        ctx.drawImage(bgImg, 0, 0, rect.width, rect.height);
+      }
+
+      // Draw main image with transform
+      if (mainUrl) {
+        const img = await loadImage(mainUrl);
+        ctx.save();
+        ctx.globalAlpha = opacity;
+        ctx.filter = filter;
+        ctx.globalCompositeOperation = blendMode;
+
+        // center position + rotation + scale + flip
+        const cx = pos.x + (size.w * scale) / 2;
+        const cy = pos.y + (size.h * scale) / 2;
+        ctx.translate(cx, cy);
+        ctx.rotate((rotation * Math.PI) / 180);
+        ctx.scale(flipH ? -1 : 1, flipV ? -1 : 1);
+        ctx.drawImage(img, - (size.w*scale)/2, - (size.h*scale)/2, size.w*scale, size.h*scale);
+        ctx.restore();
+      }
+
+      // Optional: text overlay
+      ctx.save();
+      ctx.font = "30px Arial";
+      ctx.fillStyle = "white";
+      ctx.strokeStyle = "black";
+      ctx.lineWidth = 2;
+      ctx.textBaseline = "top";
+      ctx.fillText("Your Banner Text", 20, 20);
+      ctx.strokeText("Your Banner Text", 20, 20);
+      ctx.restore();
+
+      const dataUrl = canvas.toDataURL("image/png");
+
+      // Send to backend for saving and cloud upload
+      const res = await newRequest.post("/banner/export", {
+        dataUrl,
+        backgroundUrl: bgUrl,
+        mainUrl: mainUrl
+      });
+      alert(`Saved: local=${res.data.localPath} cloud=${res.data.cloudUrl}`);
+      window.open(res.data.cloudUrl, "_blank");
+
+    } catch (err) {
+      console.error(err);
+      alert("Export failed: " + err.message);
+    }
+  };
+
+  // ---------- EFFECTS ----------
+  const applyEffect = (layerId, effect) => {
+    setLayers(prev =>
+      prev.map(l =>
+        l.id === layerId
+          ? { ...l, effects: { ...l.effects, [effect]: !l.effects[effect] } }
+          : l
+      )
+    );
+  };
+
+  const drawCanvas = async () => {
+      const canvas = canvasRef.current;
+      if(!canvas) return;
+      const ctx = canvas.getContext("2d");
+      ctx.clearRect(0,0,canvas.width,canvas.height);
+      const sorted = [...layers].sort((a,b)=>a.zIndex-b.zIndex);
+      for(const l of sorted){
+        const img = new Image();
+        img.crossOrigin = "anonymous";
+        img.src = l.url;
+        await new Promise(r=>img.onload=r);
+        ctx.save();
+        // clipping mask
+        if(l.clipping){
+          ctx.beginPath();
+          ctx.rect(l.clipping.x,l.clipping.y,l.clipping.w,l.clipping.h);
+          ctx.clip();
+        }
+        ctx.globalAlpha = l.opacity;
+        ctx.filter = l.filter;
+        ctx.globalCompositeOperation = l.blendMode;
+        const cx = l.pos.x + l.size.w/2;
+        const cy = l.pos.y + l.size.h/2;
+        ctx.translate(cx, cy);
+        ctx.rotate((l.rotation*Math.PI)/180);
+        ctx.scale(l.flipH?-1:1, l.flipV?-1:1);
+        ctx.drawImage(img, -l.size.w/2, -l.size.h/2, l.size.w, l.size.h);
+        ctx.restore();
+      }
+  
+      // draw alignment guides if activeLayer near center
+      const active = layers.find(l=>l.id===activeLayer);
+      if(active){
+        ctx.save();
+        ctx.strokeStyle="red";
+        ctx.lineWidth=1;
+        const snapMargin=5;
+        // vertical center
+        if(Math.abs((active.pos.x + active.size.w/2) - canvas.width/2)<snapMargin){
+          ctx.beginPath(); ctx.moveTo(canvas.width/2,0); ctx.lineTo(canvas.width/2,canvas.height); ctx.stroke();
+        }
+        // horizontal center
+        if(Math.abs((active.pos.y + active.size.h/2) - canvas.height/2)<snapMargin){
+          ctx.beginPath(); ctx.moveTo(0,canvas.height/2); ctx.lineTo(canvas.width,canvas.height/2); ctx.stroke();
+        }
+        ctx.restore();
+      }
+    };
+  
+    useEffect(()=>{ drawCanvas(); }, [layers, activeLayer]);
+
+    // Export canvas
+  const exportCanva = async () => {
+    const canvas = canvasRef.current;
+    const dpr = window.devicePixelRatio||2;
+    const exportCanvas = document.createElement("canvas");
+    exportCanvas.width = canvas.width*dpr;
+    exportCanvas.height = canvas.height*dpr;
+    const ctx = exportCanvas.getContext("2d");
+    ctx.scale(dpr,dpr);
+    await drawCanvas();
+    const dataUrl = canvas.toDataURL("image/png");
+    const res = await newRequest.post("/banner/export",{dataUrl});
+    alert("Saved!"); 
+  };
+
+  // ---------- EXPORT ----------
+  const exportCanvas = async () => {
+    const canvas = document.createElement("canvas");
+    const width = 900, height = 400;
+    canvas.width = width;
+    canvas.height = height;
+    const ctx = canvas.getContext("2d");
+
+    const sorted = [...layers].sort((a, b) => a.zIndex - b.zIndex);
+    for (const l of sorted) {
+      const img = new Image();
+      img.crossOrigin = "anonymous";
+      img.src = l.url;
+      await new Promise(r => (img.onload = r));
+
+      ctx.save();
+      ctx.globalAlpha = l.opacity;
+      ctx.filter = l.filter;
+      ctx.globalCompositeOperation = l.blendMode;
+      const cx = l.pos.x + (l.size.w * l.scale) / 2;
+      const cy = l.pos.y + (l.size.h * l.scale) / 2;
+      ctx.translate(cx, cy);
+      ctx.rotate((l.rotation * Math.PI) / 180);
+      ctx.drawImage(img, -(l.size.w * l.scale) / 2, -(l.size.h * l.scale) / 2, l.size.w * l.scale, l.size.h * l.scale);
+      ctx.restore();
+    }
+
+    const dataUrl = canvas.toDataURL("image/png");
+    const res = await newRequest.post("/banner/export", { dataUrl });
+    alert(`Banner saved to ${res.data.cloudUrl}`);
+  };
+
+  return (
+    <div className="banner-app">
+      
+      {/* Left side: Banner Creator */}
+    <div className="banner-section">
+    <h2>Banner Creator</h2>
+
+      <div className="controls" style={{background:'white'}} >
+        <div >
+          <label>Background:</label>
+          <input type="file" accept="image/*" onChange={handleBgChoose} style={{background:'white'}} />
+        </div>
+        <div >
+          <label>Main image:</label>
+          <input type="file" accept="image/*" onChange={handleMainChoose} style={{background:'white'}} />
+        </div>
+
+        <div   >
+          <label>Blend:</label>
+          <select value={blendMode} onChange={e => setBlendMode(e.target.value)} style={{background:'white'}} >
+            {BLEND_MODES.map(m => <option key={m} value={m}>{m}</option>)}
+          </select>
+
+          <label>Opacity:</label>
+          <input type="range"  min="0" max="1" step="0.01" value={opacity} onChange={e => setOpacity(parseFloat(e.target.value))} />
+
+          <label>Filter:</label>
+          <select value={filter} onChange={e => setFilter(e.target.value)} style={{background:'white'}} >
+            <option value="none">none</option>
+            <option value="grayscale(1)">grayscale</option>
+            <option value="sepia(1)">sepia</option>
+            <option value="contrast(1.3)">contrast</option>
+            <option value="brightness(1.2)">brightness</option>
+            <option value="saturate(1.5)">saturate</option>
+          </select>
+
+          <label>Scale (main):</label>
+          <input type="range" min="0.1" max="2" step="0.01" value={scale} onChange={e => setScale(parseFloat(e.target.value))} />
+        
+          <label>Rotation:</label>
+          <input type="range" min="0" max="360" value={rotation} onChange={e => setRotation(parseFloat(e.target.value))} />
+
+          <label>Flip H:</label>
+          <input type="checkbox" checked={flipH} onChange={e => setFlipH(e.target.checked)} />
+
+          <label>Flip V:</label>
+          <input type="checkbox" checked={flipV} onChange={e => setFlipV(e.target.checked)} />  
+        
+        </div>
+
+        <div className="hint">Drag the main image to move. Resize via bottom-right handle.</div>
+      </div>
+
+        <div className="preview-wrap">
+        
+        {<div
+          id="canvas"
+          ref={canvasRef}
+          className="canvas"
+          style={{
+            backgroundImage: bgUrl ? `url(${bgUrl})` : "none",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            position: "relative"
+          }}
+        >
+          {mainUrl && (
+            <img
+              src={mainUrl}
+              ref={mainRef}
+              alt="main"
+              className="main-image"
+              style={{
+                position: "absolute",
+                left: pos.x,
+                top: pos.y,
+                width: size.w*scale,
+                height: size.h*scale,
+                cursor: "grab",
+                transform: `rotate(${rotation}deg) scale(${flipH?-1:1},${flipV?-1:1})`
+              }}
+              onDownPointer={(e) => onDownPointer(e, "main")}
+              draggable={false}
+            />
+          )}
+
+          <h2
+            style={{
+            position: "absolute",
+            top: "20px",
+            left: "20px",
+            color: "black", // ensure visibility
+            textShadow: "1px 1px 2px white",
+            }}
+        >
+            Your Banner Text
+        </h2>
+
+        
+          <div
+            className="resize-handle"
+            onDownPointer={onResizePointerDown}
+          />
+        </div>}
+    </div>
+
+    <div className="actions">
+    <button onClick={handleExport}>Export & Save (local + cloud)</button>
+    </div>
+
+    {/* 3 Blend Mode Previews 
+      <div className="blend-previews">
+        {["multiply","screen","overlay"].map(mode => (
+          <canvas key={mode} width={200} height={120} style={{margin:10, border:"1px solid #ccc"}} ref={async (c) => {
+            if (!c) return;
+            const ctx = c.getContext("2d");
+            const rect = { width: 200, height: 120 };
+            ctx.clearRect(0,0,rect.width, rect.height);
+            if (bgUrl) { const img=await loadImage(bgUrl); ctx.drawImage(img,0,0,rect.width,rect.height);}
+            if (mainUrl) { const img=await loadImage(mainUrl); ctx.globalCompositeOperation=mode; ctx.drawImage(img,0,0,rect.width,rect.height);}
+          }}></canvas>
+        ))}
+      </div>
+    */}
+
+    </div>
+
+    {/* Right side: Banner Maker */}
+    <div className="banner-section">
+    <h2>Banner Maker</h2>
+
+      <div className="controls" style={{background:'white'}} >
+        <label>Background:</label>
+        <input type="file" onChange={(e) => addLayer(e.target.files[0], "background")} style={{background:'white'}} />
+        <label>Main Image:</label>
+        <input type="file" onChange={(e) => addLayer(e.target.files[0], "main")} style={{background:'white'}} />
+        <button onClick={undo}>Undo</button>
+        <button onClick={redo}>Redo</button>
+        <button onClick={exportCanvas}>Export</button>
+      </div>
+
+      
+
+    
+
+        <div className="preview-wrap">
+
+            <div id="canva" ref={canvaRef} className="canva">
+                {layers.map((l) => (
+                <div
+                    key={l.id}
+                    className={`layer ${activeLayer === l.id ? "active" : ""}`}
+                    style={{
+                    position: "absolute",
+                    left: l.pos.x,
+                    top: l.pos.y,
+                    width: l.size.w * l.scale,
+                    height: l.size.h * l.scale,
+                    zIndex: l.zIndex,
+                    filter: l.filter,
+                    opacity: l.opacity,
+                    mixBlendMode: l.blendMode,
+                    transform: `rotate(${l.rotation}deg)`,
+                    boxShadow: l.effects.glow ? "0 0 20px 5px rgba(255,255,255,0.7)" : "none",
+                    clipPath: l.clip || "none",
+                    backgroundImage: `url(${l.url})`,
+                    backgroundSize: "cover",
+                    border: activeLayer === l.id ? "1px dashed cyan" : "none"
+                    }}
+                    onPointerDown={(e) => onPointerDown(e, l.id)}
+                >
+                    {/* resize handle */}
+                    <div className="resize-handle" onPointerDown={(e) => startResize(e, l.id)} />
+                </div>
+                ))}
+
+            </div>
+            
+            {/*
+            <div className="layer-controls">
+                {activeLayer && (
+                <>
+                    <h4>Layer Effects</h4>
+                    {["glow","blurEdges","vignette","shine"].map(fx => (
+                    <button key={fx} onClick={() => applyEffect(activeLayer, fx)}>{fx}</button>
+                    ))}
+                    <button onClick={() => setLayers(prev => prev.map(l => l.id===activeLayer?{...l,zIndex:l.zIndex+1}:l))}>Bring Forward</button>
+                    <button onClick={() => setLayers(prev => prev.map(l => l.id===activeLayer?{...l,zIndex:l.zIndex-1}:l))}>Send Back</button>
+                </>
+                )}
+            </div>
+            */}
+
+        </div>
+
+      <div className="actions">
+        <button onClick={exportCanva}>Export & Save (local + cloud)</button>
+      </div>
+
+      
+       {/*         
+      <h3>Blend Mode Previews</h3>
+      <div className="blend-preview-row">
+        {BLEND_MODES.slice(0,5).map(mode => (
+          <div key={mode} className="blend-preview" onClick={() => {
+            if(activeLayer){
+              setLayers(prev => prev.map(l => l.id===activeLayer?{...l,blendMode:mode}:l));
+            }
+          }}>
+            <div className="preview-canvas" style={{mixBlendMode:mode, backgroundImage: layers[0]?.url?`url(${layers[0].url})`:"none", backgroundSize:"cover"}}>
+              {layers[1]?.url && <img src={layers[1].url} alt="" style={{width:"100%",height:"100%"}} />}
+            </div>
+            <p>{mode}</p>
+          </div>
+        ))}
+      </div>
+      */}
+
+      </div>
+    </div>
+  );
+}

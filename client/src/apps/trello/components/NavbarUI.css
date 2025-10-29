@@ -1,0 +1,29 @@
+.navbarui-trello-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  background: #026aa7;
+  color: white;
+  font-family: 'Inter', sans-serif;
+  margin-top: 55px;
+}
+
+.navbarui-trello-left { font-weight: 600; font-size: 1.2rem; }
+.navbarui-trello-logo { color: white; }
+
+.navbarui-trello-center ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navbarui-trello-center li {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.navbarui-trello-center li:hover { color: #ebecf0; }
+
+.navbarui-trello-right { font-weight: 500; }

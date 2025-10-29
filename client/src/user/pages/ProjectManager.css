@@ -1,0 +1,280 @@
+/* ProjectManager.css */
+
+/* Base layout */
+.project-manager {
+  display: flex;
+  min-height: 100vh;
+  background: #f8f9fc;
+  font-family: "Inter", sans-serif;
+  color: #333;
+}
+
+.sidebar {
+  width: 320px;
+  background: #fff;
+  border-right: 1px solid #e5e7eb;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #222;
+}
+
+.sidebar button {
+  background: #4f46e5;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  color: #fff;
+  font-weight: 500;
+  cursor: pointer;
+  margin-bottom: 1rem;
+  transition: background 0.2s ease;
+}
+
+.sidebar button:hover {
+  background: #4338ca;
+}
+
+/* View toggle buttons */
+.view-toggle {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.view-toggle button {
+  flex: 1;
+  padding: 0.4rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  background: #f9fafb;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.view-toggle button.active {
+  background: #4f46e5;
+  color: #fff;
+  border-color: #4f46e5;
+}
+
+/* Grid & List */
+.projects.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.projects.list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+/* Project cards */
+.project-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+/* Ensure text is visible */
+.project-card h4,
+.projects-table td {
+  color: #111827; /* dark slate */
+}
+
+/* Inline edit input */
+.inline-edit-input {
+  width: 100%;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  padding: 0.35rem 0.5rem;
+  font-size: 1rem;
+  font-weight: 500;
+  background: transparent;
+  color: #111827;
+  outline: none;
+  transition: all 0.2s ease;
+}
+
+.inline-edit-input:focus {
+  border-color: #4f46e5;
+  background: #f9fafb;
+  box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+  color: #111827;
+}
+
+/* Table inline edit */
+.projects-table td .inline-edit-input {
+  font-size: 0.9rem;
+  padding: 0.3rem 0.4rem;
+}
+
+
+.project-card .actions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.project-card button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  padding: 0.3rem;
+  color: #6b7280;
+  transition: color 0.2s;
+}
+
+.project-card button:hover {
+  color: #111827;
+}
+
+/* Table view */
+.projects-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  font-size: 0.9rem;
+}
+
+.projects-table th,
+.projects-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.projects-table th {
+  background: #f3f4f6;
+  font-weight: 600;
+  color: #374151;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.projects-table tr {
+  transition: background 0.2s;
+}
+
+.projects-table tr:hover {
+  background: #f9fafb;
+}
+
+.projects-table td button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  color: #6b7280;
+  margin-right: 0.5rem;
+  transition: color 0.2s;
+}
+
+.projects-table td button:hover {
+  color: #111827;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 0.2s ease;
+  z-index: 50;
+}
+
+.modal {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 95%;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.1);
+  animation: slideUp 0.25s ease;
+}
+
+.modal h3 {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.modal input,
+.modal select {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.modal button {
+  margin-right: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.modal button:first-of-type {
+  background: #4f46e5;
+  color: #fff;
+}
+
+.modal button:first-of-type:hover {
+  background: #4338ca;
+}
+
+.modal button:last-of-type {
+  background: #f3f4f6;
+}
+
+.modal button:last-of-type:hover {
+  background: #e5e7eb;
+}
+
+/* Share section */
+.share-section {
+  margin-top: 1rem;
+}
+
+.share-section h4 {
+  font-size: 0.95rem;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0 }
+  to { opacity: 1 }
+}
+
+@keyframes slideUp {
+  from { transform: translateY(20px); opacity: 0 }
+  to { transform: translateY(0); opacity: 1 }
+}

@@ -1,0 +1,200 @@
+.editor-container {
+  font-family: Arial, sans-serif;
+  padding: 16px;
+  background: #fafafa;
+  color: #222;
+}
+
+/* Top Bar Layout */
+.top-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.top-bar h3 {
+  margin: 0;
+  font-size: 20px;
+}
+
+.action-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.template-name {
+  flex-grow: 1;
+  max-width: 300px;
+  padding: 6px 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+/* Inline Button Group */
+.buttons-inline {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.buttons-inline button {
+  padding: 8px 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  background: #f4f4f4;
+  transition: 0.2s;
+}
+
+.buttons-inline button:hover {
+  background: #e2e2e2;
+}
+
+.buttons-inline button.active {
+  background: #007bff;
+  color: #fff;
+  border-color: #007bff;
+}
+
+.buttons-inline .save-btn {
+  background: #28a745;
+  color: white;
+  border: none;
+}
+
+.editor-main {
+  margin-top: 10px;
+}
+
+.editor-box {
+  border: 1px solid #ccc;
+  min-height: 500px;
+  border-radius: 6px;
+  background: #fff;
+}
+
+.code-box {
+  display: flex;
+  gap: 10px;
+}
+
+.code-box textarea {
+  flex: 1;
+  height: 500px;
+  font-family: monospace;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 8px;
+}
+
+/* Modal Styling */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 8px;
+  width: 80%;
+  height: 80%;
+  padding: 8px;
+  position: relative;
+}
+
+.modal-content iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 6px;
+}
+
+.modal-close {
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 24px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #333;
+}
+
+
+.carousel-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 10px;
+  padding: 10px;
+}
+
+.carousel::-webkit-scrollbar {
+  height: 6px;
+}
+.carousel::-webkit-scrollbar-thumb {
+  background-color: rgba(0,0,0,0.3);
+  border-radius: 3px;
+}
+
+.carousel-item {
+  position: relative;
+  min-width: 150px;
+  flex-shrink: 0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.carousel-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.remove-btn {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  background: rgba(255,0,0,0.7);
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.carousel-nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  border: none;
+  background: rgba(0,0,0,0.4);
+  color: white;
+  font-size: 24px;
+  width: 30px;
+  height: 50px;
+  cursor: pointer;
+  z-index: 10;
+}
+.carousel-nav.prev { left: 0; }
+.carousel-nav.next { right: 0; }

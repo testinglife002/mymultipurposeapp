@@ -1,0 +1,121 @@
+.category-manager {
+  max-width: 800px;
+  margin: 2rem auto;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.cm-title {
+  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.cm-add-main {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.cm-add-main input {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.btn-primary {
+  background-color: #0d6efd;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.btn-primary:hover {
+  background-color: #0b5ed7;
+}
+
+.category-node {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  border-left: 2px solid #ddd;
+  padding-left: 0.5rem;
+}
+
+.node-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.node-header strong {
+  font-size: 1rem;
+}
+
+.node-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 0.25rem;
+}
+
+.btn-edit, .btn-delete {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.btn-edit:hover {
+  color: #0d6efd;
+}
+
+.btn-delete:hover {
+  color: #dc3545;
+}
+
+.node-children {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+}
+
+.add-sub {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.add-sub input {
+  flex: 1;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.btn-success {
+  background-color: #198754;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+}
+
+.btn-success:hover {
+  background-color: #157347;
+}
+
+.toggle {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}

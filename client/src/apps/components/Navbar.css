@@ -1,0 +1,49 @@
+.app-mat-navbar {
+  background-color: #3700b3;
+  color: white;
+  padding: 0.5rem 2rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.app-mat-navbar-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.app-mat-navbar-item {
+  position: relative;
+  cursor: pointer;
+}
+
+.app-mat-navbar-item a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.app-mat-navbar-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #6200ee;
+  list-style: none;
+  padding: 0.5rem 0;
+  margin: 0;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  border-radius: 4px;
+  min-width: 140px;
+  z-index: 10;
+}
+
+.app-mat-navbar-dropdown-menu li {
+  padding: 0.5rem 1rem;
+}
+
+.app-mat-navbar-dropdown-menu li a {
+  color: white;
+}

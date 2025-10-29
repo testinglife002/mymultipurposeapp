@@ -1,0 +1,246 @@
+.user-dashboard-layout {
+  display: flex;
+  height: 100vh;
+  font-family: "Segoe UI", sans-serif;
+}
+
+/* Main Sidebar */
+.user-main-sidebar {
+  width: 220px;
+  background: #222;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding-top: 20px;
+  transition: width 0.3s ease;
+  overflow: hidden;
+}
+
+.user-main-sidebar.closed {
+  width: 60px;
+}
+
+.user-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px 15px 10px;
+  position: relative;
+  z-index: 5;
+}
+
+.user-sidebar-toggle-btn {
+  background: #444;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.user-sidebar-toggle-btn:hover {
+  background: #555;
+}
+
+/* Ensure toggle button is always visible even when sidebar collapsed */
+.user-main-sidebar.closed .user-sidebar-toggle-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+
+.user-sidebar-title {
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.user-sidebar-title.collapsed {
+  opacity: 0;
+  transform: translateX(-20px);
+}
+
+.user-sidebar-avatar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-sidebar-avatar.collapsed .username,
+.user-sidebar-avatar.collapsed svg {
+  display: none;
+}
+
+.sidebar-links li {
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.sidebar-links li .link-text {
+  margin-left: 10px;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.user-main-sidebar.closed .link-text {
+  opacity: 0;
+  transform: translateX(-20px);
+  pointer-events: none;
+}
+
+
+.user-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px 15px 15px;
+}
+
+.sidebar-toggle-btn {
+  background: #444;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  padding: 6px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-toggle-btn:hover {
+  background: #555;
+}
+
+.user-sidebar-avatar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.user-sidebar-avatar img {
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+}
+
+.user-avatar-dropdown {
+  background: #333;
+  margin: 5px 15px;
+  border-radius: 6px;
+  display: flex;
+  flex-direction: column;
+}
+
+.user-avatar-dropdown a {
+  color: #fff;
+  padding: 8px 12px;
+  text-decoration: none;
+}
+
+.user-avatar-dropdown a:hover {
+  background: #444;
+}
+
+.user-main-sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.user-main-sidebar ul li a {
+  color: #fff;
+  padding: 8px 15px;
+  text-decoration: none;
+  border-radius: 6px;
+  display: block;
+  transition: background 0.2s ease;
+}
+
+.user-main-sidebar ul li a:hover {
+  background: #444;
+}
+
+/* Right Side */
+.user-dashboard-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Secondary Tabs */
+.user-secondary-wrapper {
+  flex-shrink: 0;
+  background: #fff;
+  border-bottom: 1px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.user-secondary-sidebar {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 10px;
+  gap: 10px;
+  background: #fff;
+}
+
+.user-secondary-sidebar.shadow {
+  box-shadow: inset -10px 0 8px -8px rgba(0,0,0,0.2);
+}
+
+.user-secondary-tab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 8px;
+  background: #f5f5f5;
+  color: #333;
+  text-decoration: none;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.user-secondary-tab:hover {
+  background: #e0e0e0;
+  transform: translateY(-2px);
+}
+
+.user-secondary-tab.active {
+  background: #2575fc;
+  color: #fff;
+}
+
+/* Main Content */
+.user-dashboard-content {
+  flex: 1;
+  overflow-y: auto;
+  background: #f9f9f9;
+  padding: 20px;
+}
+
+/* Scrollbar for secondary tabs */
+.user-secondary-sidebar::-webkit-scrollbar {
+  height: 6px;
+}
+
+.user-secondary-sidebar::-webkit-scrollbar-thumb {
+  background: rgba(0,0,0,0.2);
+  border-radius: 3px;
+}

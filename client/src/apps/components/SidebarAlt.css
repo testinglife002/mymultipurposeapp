@@ -1,0 +1,53 @@
+.appmat-sidebar {
+  width: 250px;
+  background-color: #1f1f1f;
+  color: #ccc;
+  height: 100vh;
+  overflow: hidden;
+  transition: width 0.3s;
+}
+
+.appmat-sidebar.collapsed {
+  width: 80px;
+}
+
+.appmat-sidebar .toggle-btn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  margin: 1rem;
+  cursor: pointer;
+}
+
+.sidebar-menu {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar-menu > li {
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  position: relative;
+  transition: background 0.3s;
+}
+
+.sidebar-menu > li:hover,
+.sidebar-menu > li.active {
+  background-color: #6200ee;
+  color: white;
+}
+
+.sidebar-menu .submenu {
+  list-style: none;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-in-out;
+  background: #2c2c2c;
+  margin-left: 1rem;
+  border-left: 2px solid #6200ee;
+}
+
+.sidebar-menu > li.active .submenu {
+  max-height: 500px; /* large enough to show all items */
+}

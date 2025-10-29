@@ -1,0 +1,90 @@
+.notes-container {
+  padding: 20px;
+  color: #1f1f1f;
+  background: #fafafa;
+  border-radius: 8px;
+}
+
+.notes-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.notes-header h2 {
+  font-size: 22px;
+  font-weight: 600;
+  color: #222;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 6px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn-primary:hover {
+  background: #0062cc;
+}
+
+.notes-filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.notes-filters input,
+.notes-filters select {
+  padding: 6px 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.notes-filters input:focus,
+.notes-filters select:focus {
+  outline: 1px solid #007bff;
+}
+
+.notes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+}
+
+.loading {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+  color: #007bff;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.no-notes {
+  text-align: center;
+  color: #666;
+  font-size: 15px;
+}
+
+.notes-empty {
+  text-align: center;
+  padding: 50px 0;
+  font-size: 16px;
+  color: #555;
+}

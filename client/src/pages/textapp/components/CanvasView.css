@@ -1,0 +1,470 @@
+/* ===== Base Canvas & Layers ===== */
+/* CanvasView.css */
+/* src/pages/textapp/components/CanvasView.css */
+.canvas-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.canvas-view {
+  width: 640px;
+  height: 360px;
+  background: #222;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0,0,0,0.4);
+}
+
+.controls-section {
+  width: 90%;
+  max-width: 680px;
+  background: #f7f7f7;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+
+.bg-overlay {
+  pointer-events: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6);
+  backdrop-filter: blur(6px);
+}
+
+.bg-img {
+  pointer-events: none;
+  user-select: none;
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+
+.bg-layer {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.text-layer {
+  position: absolute;
+  user-select: none;
+  cursor: move;
+  color: white;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.7);
+}
+
+.text-layer.hovered {
+  transform: scale(1.02);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.35);
+}
+
+
+.text-layer.selected {
+  outline: 1px dashed #00baff;
+}
+.text-content {
+  pointer-events: none;
+}
+
+/* adaptive rectangle behind text */
+.text-bg-rect {
+  position: absolute;
+  background: rgba(0,0,0,0.45);
+  border-radius: 14px;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.6);
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* resize handles */
+.resize-handle {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: #00baff;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.handle-tl { top: -5px; left: -5px; cursor: nwse-resize; }
+.handle-tr { top: -5px; right: -5px; cursor: nesw-resize; }
+.handle-bl { bottom: -5px; left: -5px; cursor: nesw-resize; }
+.handle-br { bottom: -5px; right: -5px; cursor: nwse-resize; }
+.handle-t { top: -5px; left: 50%; transform: translateX(-50%); cursor: ns-resize; }
+.handle-b { bottom: -5px; left: 50%; transform: translateX(-50%); cursor: ns-resize; }
+.handle-l { left: -5px; top: 50%; transform: translateY(-50%); cursor: ew-resize; }
+.handle-r { right: -5px; top: 50%; transform: translateY(-50%); cursor: ew-resize; }
+
+
+
+/* controls */
+.canvas-controls {
+  position: absolute;
+  bottom: 12px;
+  left: 12px;
+  z-index: 60;
+
+}
+.canvas-controls .btn {
+  background: #00baff;
+  color: #00101a;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+
+.bgcontrols-panel {
+  position: absolute;
+  top: 80px;
+  right: 40px;
+  background: rgba(30, 30, 30, 0.95);
+  color: #fff;
+  padding: 12px 16px;
+  border-radius: 10px;
+  width: 260px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.4);
+  z-index: 2000;
+  backdrop-filter: blur(10px);
+}
+.bgcontrols-header {
+  font-weight: 600;
+  cursor: move;
+  margin-bottom: 6px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.bgcontrols-panel label {
+  display: flex;
+  flex-direction: column;
+  margin: 6px 0;
+  font-size: 13px;
+}
+.layerpanel-topbuttons {
+  position: fixed;
+  left: 10px;
+  top: 10px;
+  display: flex;
+  gap: 6px;
+  z-index: 1500;
+}
+.toggle-btn.active {
+  background-color: #007bff;
+  color: white;
+}
+
+
+@keyframes maskSweep {
+  0% { x: -100%; }
+  100% { x: 100%; }
+}
+
+.text-layer.selected {
+  outline: 1.5px dashed #00baff;
+}
+
+
+/* ===== Shimmer / Shine ===== */
+.effect-shimmer {
+  background: linear-gradient(90deg, #fff, #f0f, #fff);
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2s infinite linear;
+}
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ===== Wave Letters ===== */
+/* ===== Wave Letters (per-letter) ===== */
+.effect-waveLetters span {
+  display: inline-block;
+  animation: wave 1s infinite ease-in-out;
+}
+
+.effect-waveLetters span:nth-child(1) { animation-delay: 0s; }
+.effect-waveLetters span:nth-child(2) { animation-delay: 0.1s; }
+.effect-waveLetters span:nth-child(3) { animation-delay: 0.2s; }
+.effect-waveLetters span:nth-child(4) { animation-delay: 0.3s; }
+.effect-waveLetters span:nth-child(5) { animation-delay: 0.4s; }
+.effect-waveLetters span:nth-child(6) { animation-delay: 0.5s; }
+.effect-waveLetters span:nth-child(7) { animation-delay: 0.6s; }
+.effect-waveLetters span:nth-child(8) { animation-delay: 0.7s; }
+.effect-waveLetters span:nth-child(9) { animation-delay: 0.8s; }
+.effect-waveLetters span:nth-child(10) { animation-delay: 0.9s; }
+
+@keyframes wave {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* ===== Shimmer (per-letter stagger) ===== */
+.effect-shimmer span {
+  display: inline-block;
+  background: linear-gradient(90deg, #fff,#f0f,#fff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 2s infinite linear;
+}
+
+.effect-shimmer span:nth-child(1) { animation-delay: 0s; }
+.effect-shimmer span:nth-child(2) { animation-delay: 0.05s; }
+.effect-shimmer span:nth-child(3) { animation-delay: 0.1s; }
+.effect-shimmer span:nth-child(4) { animation-delay: 0.15s; }
+.effect-shimmer span:nth-child(5) { animation-delay: 0.2s; }
+.effect-shimmer span:nth-child(6) { animation-delay: 0.25s; }
+.effect-shimmer span:nth-child(7) { animation-delay: 0.3s; }
+.effect-shimmer span:nth-child(8) { animation-delay: 0.35s; }
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+/* ===== Glitch (per-letter stagger) ===== */
+.effect-glitch span {
+  display: inline-block;
+  position: relative;
+  animation: glitch 1s infinite;
+}
+
+.effect-glitch span:nth-child(1) { animation-delay: 0s; }
+.effect-glitch span:nth-child(2) { animation-delay: 0.05s; }
+.effect-glitch span:nth-child(3) { animation-delay: 0.1s; }
+.effect-glitch span:nth-child(4) { animation-delay: 0.15s; }
+
+@keyframes glitch {
+  0% { text-shadow: 2px 0 red, -2px 0 cyan; }
+  50% { text-shadow: -2px 0 red, 2px 0 cyan; }
+  100% { text-shadow: 2px 0 red, -2px 0 cyan; }
+}
+
+/* ===== Fire / Burning (per-letter stagger) ===== */
+.effect-fire span {
+  display: inline-block;
+  background: linear-gradient(to top, #f00, #ffa500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fireFlicker 1s infinite alternate;
+}
+
+.effect-fire span:nth-child(1) { animation-delay: 0s; }
+.effect-fire span:nth-child(2) { animation-delay: 0.05s; }
+.effect-fire span:nth-child(3) { animation-delay: 0.1s; }
+.effect-fire span:nth-child(4) { animation-delay: 0.15s; }
+.effect-fire span:nth-child(5) { animation-delay: 0.2s; }
+
+@keyframes fireFlicker {
+  0% { filter: blur(0px) }
+  50% { filter: blur(2px) }
+  100% { filter: blur(0px) }
+}
+
+
+/* ===== Chrome / Metallic ===== */
+.effect-chrome {
+  background: linear-gradient(135deg, #aaa, #fff, #ccc);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+}
+
+/* ===== Mask Reveal ===== */
+.effect-maskReveal {
+  color: transparent;
+  background: linear-gradient(to right, #f00,#0f0,#00f);
+  -webkit-background-clip: text;
+  animation: maskReveal 3s infinite;
+}
+@keyframes maskReveal {
+  0%,100% { clip-path: inset(0 100% 0 0); }
+  50% { clip-path: inset(0 0 0 0); }
+}
+
+/* ===== Neon ===== */
+.effect-neon {
+  color: #0ff;
+  text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 20px #0ff, 0 0 40px #0ff;
+}
+
+/* ===== Typewriter / Dynamic ===== */
+.effect-typewriter,
+.effect-dynamicTypewriter {
+  overflow: hidden;
+  border-right: .15em solid orange;
+  white-space: nowrap;
+  animation: typing 2s steps(20) infinite, blink .5s step-end infinite alternate;
+}
+@keyframes typing { from { width: 0 } to { width: 100% } }
+@keyframes blink { 50% { border-color: transparent; } }
+
+/* ===== Fire / Burning ===== */
+.effect-fire {
+  background: linear-gradient(to top, #f00, #ffa500);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fireFlicker 1s infinite alternate;
+}
+@keyframes fireFlicker {
+  0% { filter: blur(0px) }
+  50% { filter: blur(2px) }
+  100% { filter: blur(0px) }
+}
+
+/* ===== Glitch ===== */
+.effect-glitch {
+  position: relative;
+  color: #fff;
+  animation: glitch 1s infinite;
+}
+@keyframes glitch {
+  0% { text-shadow: 2px 0 red, -2px 0 cyan; }
+  50% { text-shadow: -2px 0 red, 2px 0 cyan; }
+  100% { text-shadow: 2px 0 red, -2px 0 cyan; }
+}
+
+/* ===== Aurora / Northern Lights ===== */
+.effect-aurora {
+  background: linear-gradient(90deg, #0ff,#f0f,#ff0,#0ff);
+  background-size: 200% 200%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: aurora 5s linear infinite;
+}
+@keyframes aurora {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== Wooden ===== */
+.effect-wooden {
+  color: #8B4513;
+  text-shadow: 1px 1px #CD853F, 2px 2px #8B4513;
+}
+
+/* ===== Pulsing 3D ===== */
+.effect-pulsing3D {
+  text-shadow: 2px 2px #000, 4px 4px #555;
+  animation: pulse3D 1s infinite alternate;
+}
+@keyframes pulse3D {
+  0% { text-shadow: 1px 1px #000, 2px 2px #555; }
+  100% { text-shadow: 3px 3px #000, 6px 6px #555; }
+}
+
+/* ===== 3D Rotate ===== */
+.effect-3dRotate {
+  display: inline-block;
+  transform-style: preserve-3d;
+  animation: rotate3D 5s linear infinite;
+}
+@keyframes rotate3D {
+  0% { transform: rotateY(0deg) rotateX(0deg); }
+  50% { transform: rotateY(180deg) rotateX(180deg); }
+  100% { transform: rotateY(360deg) rotateX(360deg); }
+}
+
+/* ===== Gooey Marquee ===== */
+.effect-gooeyMarquee {
+  position: relative;
+  display: inline-block;
+  animation: marquee 10s linear infinite;
+}
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+/* ===== Clip-path Hover ===== */
+.effect-clipHover {
+  display: inline-block;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  transition: all 0.5s ease;
+}
+.effect-clipHover::before,
+.effect-clipHover::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  clip-path: polygon(0 0,100% 0,100% 50%,0 50%);
+}
+.effect-clipHover:hover::before {
+  clip-path: polygon(0 50%,100% 50%,100% 100%,0 100%);
+}
+
+/* ===== Text With Background Image ===== */
+.effect-bgImage {
+  background-image: url('your-image.jpg'); /* replace dynamically if needed */
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* ===== Split Hover Effect ===== */
+.effect-splitHover {
+  position: relative;
+  display: inline-block;
+}
+.effect-splitHover::before,
+.effect-splitHover::after {
+  content: attr(data-text);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  color: #fff;
+}
+.effect-splitHover::before { transform: translateX(-2px); opacity: 0.7; }
+.effect-splitHover::after { transform: translateX(2px); opacity: 0.7; }
+.effect-splitHover:hover::before { transform: translateX(0); opacity: 1; }
+.effect-splitHover:hover::after { transform: translateX(0); opacity: 1; }
+
+/* ===== Metallic Gradient ===== */
+.effect-metallic {
+  background: linear-gradient(135deg,#aaa,#fff,#ddd);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* ===== Firey Text Animation (Burning Letters) ===== */
+.effect-fireyText {
+  background: linear-gradient(to top,#f00,#ff0,#fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: fireyTextFlicker 0.8s infinite alternate;
+}
+@keyframes fireyTextFlicker {
+  0% { filter: blur(0px) }
+  50% { filter: blur(1.5px) }
+  100% { filter: blur(0px) }
+}
+
+/* ===== 3D Marquee / Rotating Text Around Background ===== */
+.effect-3dMarquee {
+  display: inline-block;
+  transform-style: preserve-3d;
+  animation: marquee3D 5s linear infinite;
+}
+@keyframes marquee3D {
+  0% { transform: rotateY(0deg) translateZ(0px); }
+  50% { transform: rotateY(180deg) translateZ(50px); }
+  100% { transform: rotateY(360deg) translateZ(0px); }
+}

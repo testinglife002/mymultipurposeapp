@@ -1,0 +1,5 @@
+.palette-picker{margin-top:16px}
+.palette-picker h4{margin-bottom:6px}
+.palette-row{display:flex;gap:8px;flex-wrap:wrap}
+.palette-row input[type=color]{width:32px;height:32px;border:none;cursor:pointer;border-radius:4px}
+.palette-row .btn{padding:4px 8px;font-size:14px}

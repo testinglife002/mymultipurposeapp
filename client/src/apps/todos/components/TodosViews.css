@@ -1,0 +1,124 @@
+/* Generic container for all views */
+.todos-views-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Headings */
+.todos-views-container h4 {
+  font-size: 1.4rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.todos-views-container h5 {
+  font-size: 1.1rem;
+  margin: 10px 0 6px;
+  font-weight: 500;
+  color: #495057;
+}
+
+/* Paragraph messages */
+.todos-views-container p {
+  font-size: 0.95rem;
+  color: #6c757d;
+  margin: 6px 0;
+}
+
+/* TodoCard spacing in list views */
+.todos-views-container > div,
+.todos-views-container > section {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* TodayView, InboxView, AllTodosView todo card spacing */
+.todos-views-container .todo-card + .todo-card {
+  margin-top: 12px;
+}
+
+/* ThisWeekView day sections */
+.todos-views-container .week-day-section {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #e9ecef;
+  padding-bottom: 12px;
+}
+
+/* CalendarView container */
+.calendar-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.calendar-container .react-calendar {
+  border: 1px solid #dee2e6;
+  border-radius: 8px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.calendar-container .react-calendar__navigation button {
+  background: none;
+  border: none;
+  color: #0d6efd;
+  font-weight: 500;
+  padding: 6px 12px;
+  margin: 0 2px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.calendar-container .react-calendar__navigation button:hover {
+  background-color: #e9ecef;
+}
+
+.calendar-container .react-calendar__tile {
+  height: 50px;
+  padding: 4px;
+  border-radius: 6px;
+  position: relative;
+  font-size: 0.9rem;
+}
+
+.calendar-container .react-calendar__tile--active {
+  background-color: #0d6efd;
+  color: #fff;
+}
+
+.calendar-container .tile-todo-count {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  background-color: #0d6efd;
+  color: #fff;
+  font-size: 0.7rem;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
+
+/* Todos list for selected date */
+.todos-for-date {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .todos-views-container {
+    padding: 12px;
+  }
+
+  .calendar-container .react-calendar {
+    width: 100%;
+  }
+}

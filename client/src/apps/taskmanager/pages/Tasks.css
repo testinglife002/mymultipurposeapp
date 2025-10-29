@@ -1,0 +1,38 @@
+.tasks-page {
+  background: #f8fafc;
+  padding: 1.5rem;
+  min-height: 100vh;
+}
+
+.tasks-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.tasks-header h2 {
+  font-size: 1.5rem;
+  color: #1f2937;
+}
+
+.view-toggle button {
+  border: 1px solid #d1d5db;
+  background: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  margin-left: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s;
+}
+
+.view-toggle button:hover {
+  background: #e5e7eb;
+}
+
+.view-toggle button.active {
+  background: #2563eb;
+  color: white;
+  border-color: #2563eb;
+}

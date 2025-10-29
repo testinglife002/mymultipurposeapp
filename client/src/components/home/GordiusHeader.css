@@ -1,0 +1,109 @@
+.gordius-header {
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: #fff;
+  transition: all 0.3s ease-in-out;
+  border-bottom: 2px solid #0d6efd;
+}
+
+.gordius-header.shrink { padding: 4px 0; }
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+}
+
+.logo a {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0d6efd;
+  text-decoration: none;
+  transition: 0.3s all;
+}
+.logo a:hover { color: #00bfff; }
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 16px;
+  transition: all 0.3s;
+  color: #444;
+}
+.nav-links li a, .nav-links li button {
+  color: #fff;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.3s all;
+}
+.nav-links li a:hover, .nav-links li button:hover { background: #0d6efd; color: #fff; }
+
+.dropdown-menu {
+  position: absolute;
+  background: #161b22;
+  margin-top: 6px;
+  padding: 8px 0;
+  border-radius: 8px;
+  min-width: 160px;
+  list-style: none;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  z-index: 1000;
+}
+.dropdown-menu li { padding: 6px 16px; }
+.dropdown-menu li a, .dropdown-menu li button { color: #fff; text-decoration: none; }
+.dropdown-menu li a:hover, .dropdown-menu li button:hover { background: #0d6efd; color: #fff; }
+.dropdown-menu.right { right: 0; left: auto; }
+
+.nav-actions { display: flex; align-items: center; gap: 10px; }
+
+.btn-outline {
+  border: 1px solid #0d6efd;
+  color: #0d6efd;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s all;
+}
+.btn-outline:hover { background: #0d6efd; color: #fff; }
+
+.btn-primary {
+  background: #0d6efd;
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s all;
+}
+.btn-primary:hover { opacity: 0.9; }
+
+.ticker-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  background: #0d6efd;
+  color: #fff;
+  padding: 6px 0;
+}
+.ticker {
+  display: inline-block;
+  animation: ticker-scroll 20s linear infinite;
+}
+.ticker span { margin-right: 40px; display: inline-block; }
+.ticker-wrapper:hover .ticker { animation-play-state: paused; }
+
+@keyframes ticker-scroll { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+
+.show { opacity: 1; transform: translateY(0); transition: 0.3s; }
+.hide { opacity: 0; transform: translateY(-20px); transition: 0.3s; }
+
+/* Responsive */
+@media (max-width: 992px) {
+  .nav-links { display: none; }
+  .header-top { justify-content: space-between; }
+}

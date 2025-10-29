@@ -1,0 +1,81 @@
+/* src/components/Sidebar.css */
+
+.gordius-sidebar {
+  width: 240px;
+  background: #fff;
+  border-right: 1px solid #eee;
+  transition: width 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.gordius-sidebar.gordius-collapsed {
+  width: 70px;
+}
+
+.gordius-toggle-btn {
+  background: #712cf9;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0 8px 8px 0;
+  position: absolute;
+  top: 1rem;
+  right: -1.5rem;
+}
+
+.gordius-menu {
+  list-style: none;
+  margin: 4rem 0 0 0;
+  padding: 0;
+}
+
+.gordius-menu-item {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  color: #555;
+  transition: background 0.2s;
+}
+
+.gordius-menu-item:hover {
+  background: #f4f4f9;
+}
+
+.gordius-menu-item .gordius-icon {
+  font-size: 1.25rem;
+}
+
+.gordius-menu-item .gordius-label {
+  margin-left: 0.75rem;
+  font-weight: 600;
+}
+
+/* Responsive Sidebar */
+@media (max-width: 992px) {
+  .gordius-sidebar {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+  }
+
+  .gordius-menu {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+  }
+
+  .gordius-menu-item {
+    flex-direction: column;
+    padding: 0.5rem;
+  }
+
+  .gordius-toggle-btn {
+    display: none;
+  }
+}
+

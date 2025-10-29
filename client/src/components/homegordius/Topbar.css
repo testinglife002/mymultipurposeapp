@@ -1,0 +1,44 @@
+.gordius-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1.5rem;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.gordius-topbar-left h1 {
+  font-size: 1.5rem;
+  color: #712cf9;
+  margin: 0;
+  font-weight: 700;
+}
+
+.gordius-topbar-right {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.gordius-topbar-icon {
+  font-size: 1.25rem;
+  color: #555;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.gordius-topbar-icon:hover {
+  background: #f4f4f9;
+  color: #ff6f61;
+}
+
+.gordius-profile {
+  background: #712cf9;
+  color: #fff;
+}

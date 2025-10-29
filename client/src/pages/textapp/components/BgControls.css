@@ -1,0 +1,98 @@
+.bg-controls {
+  position: fixed;
+  background: rgba(35, 35, 35, 0.95);
+  color: #fff;
+  border-radius: 10px;
+  padding: 10px;
+  width: 260px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 0;
+  transform: translateY(-10px);
+  z-index: 9999;
+  margin-right: 0%;
+}
+
+.bg-controls.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.bg-controls-header {
+  font-weight: bold;
+  cursor: grab;
+  padding: 6px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 6px;
+}
+
+.bg-controls-body label {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px 0;
+  font-size: 13px;
+}
+
+.bg-controls input[type="range"] {
+  flex: 1;
+  margin-left: 8px;
+}
+
+.bg-controls input[type="checkbox"],
+.bg-controls input[type="number"] {
+  margin-left: 8px;
+}
+
+.control-group {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 8px;
+  padding: 6px;
+  margin-bottom: 8px;
+}
+
+
+/* src/pages/textapp/components/BgControls.css */
+.bg-controls-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  font-size: 14px;
+}
+
+.bg-controls-section h3 {
+  font-size: 16px;
+  margin-bottom: 6px;
+  color: #444;
+}
+
+.control-group {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  padding-top: 0.5rem;
+}
+
+.control-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.control-group input[type="range"] {
+  width: 80px;
+  height: 4px;
+}
+
+.control-group input[type="number"] {
+  width: 50px;
+  padding: 2px 4px;
+  font-size: 13px;
+}
+
+.control-group input[type="checkbox"] {
+  transform: scale(0.9);
+}

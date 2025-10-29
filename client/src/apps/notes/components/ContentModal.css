@@ -1,0 +1,15 @@
+.contentmodal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contentmodal-body {
+  padding: 1rem;
+  max-height: 60vh;
+  overflow-y: auto;
+}
+
+.close-btn {
+  margin-left: auto;
+}

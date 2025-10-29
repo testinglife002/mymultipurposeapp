@@ -1,0 +1,53 @@
+/* src/components/TwoSidePosts.css */
+
+.gordius-two-side-posts {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.gordius-two-side-posts .gordius-post-left,
+.gordius-two-side-posts .gordius-post-right {
+  flex: 1;
+  position: relative;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.gordius-two-side-posts .gordius-post-left:hover,
+.gordius-two-side-posts .gordius-post-right:hover {
+  transform: translateY(-3px);
+}
+
+.gordius-two-side-posts img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+}
+
+.gordius-post-info {
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.7));
+  width: 100%;
+  padding: 1rem;
+  color: #fff;
+}
+
+.gordius-post-info h3 {
+  margin: 0 0 0.5rem 0;
+  font-weight: 700;
+}
+
+.gordius-post-info a {
+  color: #ff6f61;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+
+.gordius-post-info a svg {
+  margin-left: 0.25rem;
+}

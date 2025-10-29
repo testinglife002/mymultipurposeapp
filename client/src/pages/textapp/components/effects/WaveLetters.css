@@ -1,0 +1,10 @@
+/* 13️⃣ WaveLetters.css */
+.waveLetters span {
+  display: inline-block;
+  animation: waveLetter 1.6s infinite ease-in-out;
+}
+
+@keyframes waveLetter {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}

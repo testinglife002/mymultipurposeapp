@@ -1,0 +1,105 @@
+.admin-dashboard-topbar {
+  position: fixed;
+  top: 105px; /* header + DashboardNavbarUI */
+  right: 0;
+  height: 50px;
+  background: linear-gradient(90deg, #2a2a3c, #6a11cb);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  z-index: 900;
+  transition: left 0.3s ease;
+}
+
+.admin-dashboard-topbar .admin-dashboard-navbar-left .admin-dashboard-navbar-brand {  
+  font-weight: bold;
+}
+
+.admin-dashboard-topbar .admin-dashboard-navbar-center {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  justify-content: center;
+}
+
+.admin-dashboard-topbar .admin-dashboard-search-input {
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px 0 0 6px;
+  border: none;
+  width: 220px;
+  outline: none;
+}
+
+.admin-dashboard-topbar .admin-dashboard-search-btn {
+  padding: 0.3rem 0.5rem;
+  border: none;
+  background: #2575fc;
+  color: white;
+  border-radius: 0 6px 6px 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.admin-dashboard-topbar .admin-dashboard-search-btn:hover {
+  background: #1a5ed4;
+}
+
+.admin-dashboard-topbar .admin-dashboard-navbar-right {
+  display: flex;
+  align-items: center;
+}
+
+.admin-dashboard-topbar .admin-dashboard-nav-link {
+  margin-left: 1rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  transition: background 0.2s ease;
+}
+
+.admin-dashboard-topbar .admin-dashboard-nav-link:hover {
+  background: rgba(255,255,255,0.1);
+}
+
+.admin-dashboard-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #333;
+  padding: 0.5rem 0;
+  border-radius: 6px;
+  min-width: 160px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  z-index: 1100;
+}
+
+.admin-dashboard-dropdown-item {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  color: white;
+}
+
+.admin-dashboard-dropdown-item:hover {
+  background: #2575fc;
+}
+
+.admin-dashboard-dropdown-divider {
+  height: 1px;
+  background: #555;
+  margin: 0.3rem 0;
+}
+.admin-dashboard-dashboard-topbar {
+  left: 220px; /* default sidebar width */
+  transition: left 0.3s ease;
+}
+
+.admin-dashboard-dashboard-topbar.collapsed {
+  left: 60px;
+}
+
+

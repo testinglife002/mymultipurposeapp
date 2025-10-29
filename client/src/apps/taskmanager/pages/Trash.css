@@ -1,0 +1,65 @@
+.trash-container {
+  padding: 20px;
+  width: 100%;
+}
+
+.trash-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.trash-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.trash-table-container {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.trash-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.trash-table th,
+.trash-table td {
+  text-align: left;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+}
+
+.trash-table tr:hover {
+  background: #f8f8f8;
+}
+
+.btn-delete {
+  background: #ffe3e3;
+  color: #b00020;
+}
+
+.btn-restore {
+  background: #e8f5e9;
+  color: #1b5e20;
+}
+
+.icon-delete {
+  color: #d32f2f;
+  cursor: pointer;
+}
+
+.icon-restore {
+  color: #388e3c;
+  cursor: pointer;
+}
+
+.icon-delete:hover,
+.icon-restore:hover {
+  opacity: 0.7;
+}

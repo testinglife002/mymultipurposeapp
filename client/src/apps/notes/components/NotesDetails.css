@@ -1,0 +1,79 @@
+/* src/appcomponents/NotesDetails.css */
+
+.note-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1rem 1.5rem;
+  margin-bottom: 10%;
+}
+
+.note-back-btn {
+  margin-bottom: 1rem;
+}
+
+.btn-link {
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  border: 1px solid #6c757d;
+  border-radius: 4px;
+  text-decoration: none;
+  color: #6c757d;
+  transition: all 0.2s ease;
+}
+
+.btn-link:hover {
+  background-color: #f1f1f1;
+  color: #000;
+}
+
+.note-title {
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.note-meta {
+  color: #6c757d;
+  margin-bottom: 0.5rem;
+  font-size: 0.9rem;
+}
+
+.note-author {
+  font-size: 0.85rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.note-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 1rem;
+}
+
+.note-alert {
+  margin-top: 1rem;
+}
+
+.note-content {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  max-height: 70vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+  margin-bottom: 10%;
+  scrollbar-width: thin; /* Firefox */
+}
+
+.note-empty {
+  color: #999;
+  font-style: italic;
+  text-align: center;
+}
+
+.loading-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 90vh;
+}

@@ -1,0 +1,18 @@
+/* 🎨 1️⃣ AnimatedGradient.css */
+:root {
+  --color1: #ff7a18;
+  --color2: #ffd200;
+}
+
+.animatedGradient {
+  background: linear-gradient(270deg, var(--color1), var(--color2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientMove 3s infinite linear;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}

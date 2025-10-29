@@ -1,0 +1,91 @@
+.category-manager {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1rem;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.category-manager h3 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.cat-tree {
+  margin-top: 1rem;
+}
+
+.cat-node {
+  margin-left: 1rem;
+  margin-top: 0.5rem;
+  border-left: 2px solid #ddd;
+  padding-left: 0.5rem;
+}
+
+.cat-node-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cat-node-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.cat-toggle-icon {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.cat-node-actions {
+  display: flex;
+  gap: 0.3rem;
+}
+
+.cat-add-sub {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+.cat-add-sub input {
+  flex-grow: 1;
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.cat-input {
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  outline: none;
+}
+
+.cat-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.2s;
+}
+
+.primary-btn { background: #0d6efd; color: white; }
+.success-btn { background: #198754; color: white; }
+.delete-btn { background: #dc3545; color: white; }
+.edit-btn { background: #0d6efd; color: white; }
+.add-btn { background: #198754; color: white; }
+
+.cat-btn:hover {
+  filter: brightness(1.1);
+}
+
+.cat-children {
+  margin-left: 1rem;
+}

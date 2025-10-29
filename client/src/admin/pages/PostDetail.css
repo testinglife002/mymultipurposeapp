@@ -1,0 +1,140 @@
+/* src/apps/posts/pages/PostDetails.css */
+
+.postdetails-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background: var(--bg-gray, #fafafa);
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  color: #222;
+  font-family: "Inter", system-ui, sans-serif;
+}
+
+.postdetails-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.back-btn,
+.edit-btn {
+  background: #fff;
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  display: flex;
+  gap: 6px;
+  align-items: center;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+
+.back-btn:hover,
+.edit-btn:hover {
+  background: #f4f4f4;
+}
+
+.postdetails-card {
+  padding: 1.5rem 2rem;
+  background: #fff;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.postdetails-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #1a1a1a;
+}
+
+.postdetails-meta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 0.9rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.postdetails-image {
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 1.2rem;
+}
+
+.postdetails-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.postdetails-description {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* ✅ Editor blocks */
+.postdetails-blocks {
+  margin-top: 1rem;
+}
+
+.post-block {
+  margin-bottom: 1.2rem;
+}
+
+.post-block-header {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 0.5rem;
+}
+
+.post-block-text {
+  line-height: 1.7;
+  color: #444;
+}
+
+.post-block-image {
+  width: 100%;
+  border-radius: 8px;
+  margin-top: 0.5rem;
+}
+
+/* HTML fallback */
+.postdetails-content {
+  line-height: 1.7;
+  color: #444;
+  font-size: 1rem;
+}
+
+/* Loading state */
+.postdetails-loading {
+  text-align: center;
+  margin-top: 3rem;
+  color: #666;
+}
+
+.loader {
+  border: 3px solid #e0e0e0;
+  border-top: 3px solid #888;
+  border-radius: 50%;
+  width: 26px;
+  height: 26px;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 10px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

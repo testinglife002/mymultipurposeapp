@@ -1,0 +1,89 @@
+.app-mat-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  background-color: #1976d2;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1rem;
+  z-index: 1400;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.app-mat-header-left {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.app-mat-header-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.app-mat-header-toggle {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.app-mat-header-right {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  position: relative;
+}
+
+.app-mat-header-btn {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  position: relative;
+}
+
+.app-mat-header-dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #1565c0;
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  z-index: 1500;
+}
+
+.app-mat-header-dropdown li {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.app-mat-header-dropdown li:hover {
+  background: #0d47a1;
+}
+
+.app-mat-header-dropdown-right {
+  right: 0;
+  left: auto;
+}
+
+.app-mat-header-icon {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+.app-mat-header-avatar-wrapper {
+  position: relative;
+}

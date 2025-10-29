@@ -1,0 +1,31 @@
+.TodosApp {
+  display: flex;
+  height: 100vh;
+  font-family: Arial, sans-serif;
+}
+
+/* Left Sidebar */
+.sidebar {
+  flex: 1;
+  border-right: 1px solid #ddd;
+  padding: 1rem;
+  background: #f9f9f9;
+  overflow-y: auto;
+}
+
+/* Middle Todo List */
+.todo-list {
+  flex: 1;
+  border-right: 1px solid #ddd;
+  padding: 1rem;
+  background: #fff;
+  overflow-y: auto;
+}
+
+/* Right Edit Todo */
+.edit-todo {
+  flex: 1;
+  padding: 1rem;
+  background: #f4f4f4;
+  overflow-y: auto;
+}

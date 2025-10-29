@@ -1,0 +1,73 @@
+.category-node {
+  margin-left: 10px;
+  margin-bottom: 8px;
+}
+
+.node-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: background 0.2s;
+}
+
+.node-header:hover {
+  background: #f3f4f6;
+}
+
+.node-main {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.node-children {
+  margin-left: 18px;
+  border-left: 1px dashed #e5e7eb;
+  padding-left: 10px;
+}
+
+.chevron-icon {
+  width: 16px;
+  height: 16px;
+  color: #6366f1;
+  transition: transform 0.2s;
+}
+
+.chevron-icon.open {
+  transform: rotate(90deg);
+}
+
+.chevron-placeholder {
+  display: inline-block;
+  width: 16px;
+}
+
+.folder-icon {
+  color: #6366f1;
+}
+
+.node-name {
+  font-weight: 500;
+  color: #1f2937;
+}
+
+.node-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.action-icon {
+  cursor: pointer;
+  transition: color 0.2s;
+}
+
+.edit-icon:hover {
+  color: #10b981;
+}
+
+.delete-icon:hover {
+  color: #ef4444;
+}

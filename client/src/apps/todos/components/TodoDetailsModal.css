@@ -1,0 +1,268 @@
+/* Modal Overlay */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+/* Modal Container */
+.modal-container {
+  background-color: #1e1e2f;
+  color: #fff;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 700px;
+  max-height: 90%;
+  overflow-y: auto;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+}
+
+/* Modal Header */
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid #333;
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+/* Icon Button */
+.icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Badge Box */
+.badge-box {
+  margin-bottom: 10px;
+}
+
+.badge {
+  display: inline-block;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+  margin-left: 8px;
+  font-weight: 500;
+}
+
+.badge-info {
+  background-color: #17a2b8;
+  color: #fff;
+}
+
+.badge-danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.badge-warning {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.badge-success {
+  background-color: #28a745;
+  color: #fff;
+}
+
+.badge-secondary {
+  background-color: #6c757d;
+  color: #fff;
+}
+
+/* Form Groups */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.form-group.inline {
+  display: flex;
+  gap: 12px;
+}
+
+.form-group label {
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  padding: 8px 10px;
+  border-radius: 6px;
+  border: 1px solid #555;
+  background-color: #2c2c3c;
+  color: #fff;
+  font-size: 0.9rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+}
+
+/* Progress Bar */
+.progress-container {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #333;
+  border-radius: 6px;
+  height: 12px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background-color: #28a745;
+  width: 0%;
+  transition: width 0.3s ease;
+  border-radius: 6px;
+}
+
+/* Subtodo List */
+.subtodo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.subtodo-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px;
+  border-radius: 6px;
+  user-select: none;
+}
+
+.subtodo-row input[type="text"] {
+  flex: 1;
+}
+
+.subtodo-select {
+  padding: 4px 8px;
+  border-radius: 6px;
+  background-color: #2c2c3c;
+  color: #fff;
+  border: 1px solid #555;
+}
+
+.drag-icon {
+  cursor: grab;
+}
+
+/* Todo Info */
+.todo-info {
+  font-size: 0.85rem;
+  color: #ccc;
+  margin-top: 12px;
+}
+
+/* Modal Footer */
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+  padding: 16px 20px;
+  border-top: 1px solid #333;
+  background-color: #1b1b2a;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.2s ease;
+}
+
+.btn.primary {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn.primary:hover {
+  background-color: #0069d9;
+}
+
+.btn.danger {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.btn.danger:hover {
+  background-color: #c82333;
+}
+
+
+.badge-box {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 6px;
+}
+
+.badge {
+  padding: 4px 8px;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.badge-danger {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.badge-warning {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.badge-info {
+  background: #d1ecf1;
+  color: #0c5460;
+}
+
+.badge-success {
+  background: #d4edda;
+  color: #155724;
+}

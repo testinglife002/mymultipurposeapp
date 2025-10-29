@@ -1,0 +1,27 @@
+/* TaskModal.css */
+
+.task-modal .MuiDialog-paper {
+  border-radius: 12px;
+}
+
+.form-row {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.MuiFormControl-root {
+  min-width: 120px;
+}
+
+.MuiDialogTitle-root {
+  font-weight: bold;
+}
+
+.MuiDialogContent-root {
+  padding-top: 12px !important;
+}
+
+.MuiDialogActions-root {
+  padding: 12px 24px;
+}

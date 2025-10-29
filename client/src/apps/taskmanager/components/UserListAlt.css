@@ -1,0 +1,180 @@
+/* UserListAlt.css */
+
+.userlist-container {
+  margin-bottom: 16px;
+}
+
+.userlist-label {
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.userlist-dropdown {
+  position: relative;
+  width: 100%;
+}
+
+.userlist-toggle {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  background: #fff;
+  text-align: left;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.userlist-toggle:hover {
+  border-color: #888;
+}
+
+.dropdown-icon {
+  margin-left: 8px;
+  flex-shrink: 0;
+}
+
+.userlist-menu {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  max-height: 220px;
+  overflow-y: auto;
+  z-index: 10;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.08);
+}
+
+.userlist-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.userlist-item:hover {
+  background: #f5f5f5;
+}
+
+.userlist-item.active {
+  background: #ede7f6;
+  font-weight: 500;
+}
+
+.check-icon {
+  margin-left: auto;
+  color: #673ab7;
+}
+
+.userlist-selected {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.user-chip {
+  font-size: 13px !important;
+}
+
+
+/* src/apps/tasks/pages/UserListAlt.css */
+
+.userlist-container {
+  margin-top: 12px;
+}
+
+.userlist-label {
+  font-weight: 500;
+  color: #333;
+  margin-bottom: 8px;
+  font-size: 0.95rem;
+}
+
+.userlist-dropdown {
+  position: relative;
+}
+
+.userlist-toggle {
+  width: 100%;
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #444;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.userlist-toggle:hover {
+  background: #f0f4ff;
+  border-color: #3b82f6;
+}
+
+.dropdown-icon {
+  color: #666;
+}
+
+.userlist-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 0;
+  right: 0;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.05);
+  max-height: 220px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.userlist-item {
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.userlist-item:hover {
+  background: #f9fafc;
+}
+
+.userlist-item.active {
+  background: #eef3ff;
+  color: #3b82f6;
+  font-weight: 500;
+}
+
+.check-icon {
+  margin-left: auto;
+  color: #3b82f6;
+}
+
+.userlist-selected {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: 10px;
+}
+
+.user-chip {
+  background: #f0f3f7 !important;
+  font-size: 0.85rem !important;
+  color: #333 !important;
+}
+

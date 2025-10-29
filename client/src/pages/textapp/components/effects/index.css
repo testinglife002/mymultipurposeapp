@@ -1,0 +1,19 @@
+/* 📁 src/components/effects/index.css */
+@import "./AnimatedGradient.css";
+@import "./Neon.css";
+@import "./Wavy.css";
+@import "./Typewriter.css";
+@import "./Fire.css";
+@import "./Glitch.css";
+@import "./Shimmer.css";
+@import "./Outline.css";
+@import "./ShadowPulse.css";
+@import "./ThreeDText.css";
+@import "./Glow.css";
+@import "./Mirror.css";
+@import "./WaveLetters.css";
+@import "./GradientStroke.css";
+@import "./PopIn.css";
+@import "./FadeIn.css";
+@import "./SlideIn.css";
+@import "./GooeyMarquee.css";

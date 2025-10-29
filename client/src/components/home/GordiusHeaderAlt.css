@@ -1,0 +1,176 @@
+/* ====== HEADER BASE ====== */
+.header-alt {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: gray;
+  width: 100%;
+  border-bottom: 2px solid #0d6efd;
+  transition: all 0.3s ease-in-out;
+  margin-top: -10%;
+  max-height: 50px;
+  border-radius: 5px;
+  border: #0d6efd;
+}
+.header-alt.shrink {
+  padding: 4px 0;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  
+}
+
+/* ====== LOGO ====== */
+.logo a {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0d6efd;
+  text-decoration: none;
+}
+.logo a:hover {
+  color: #00bfff;
+}
+
+/* ====== NAVIGATION ====== */
+.nav-tabs a {
+  margin: 0 10px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #444;
+  transition: 0.3s all;
+}
+.nav-tabs a:hover {
+  background: #e9f5ff;
+  color: #0d6efd;
+}
+.nav-tabs.show { display: flex; }
+.nav-tabs.hide { display: none; }
+
+/* ====== BUTTONS ====== */
+.header-buttons .btn {
+  margin-left: 8px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  text-decoration: none;
+  border: 1px solid #0d6efd;
+  transition: 0.3s ease;
+}
+.btn-outline {
+  background: transparent;
+  color: #0d6efd;
+}
+.btn-outline:hover {
+  background: #0d6efd;
+  color: #fff;
+}
+.btn-primary {
+  background: #0d6efd;
+  color: #fff;
+}
+.btn-primary:hover {
+  opacity: 0.85;
+}
+.header-buttons.show { display: flex; }
+.header-buttons.hide { display: none; }
+
+/* ====== TICKER ====== */
+.ticker-wrapper {
+  background: #0d6efd;
+  color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  padding: 2px 0;
+  font-weight: 500;
+  margin-top: 0%;
+}
+.ticker {
+  display: inline-block;
+  animation: ticker-scroll 20s linear infinite;
+}
+.ticker span {
+  margin-right: 40px;
+}
+.ticker-wrapper:hover .ticker {
+  animation-play-state: paused;
+}
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+/* ====== DROPDOWN ====== */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-toggle:hover,
+.dropdown-toggle.active {
+  background: #e9f5ff;
+  color: #0d6efd;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  padding: 8px 0;
+  margin-top: 4px;
+  list-style: none;
+  z-index: 999;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.dropdown-menu li {
+  padding: 0;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 8px 14px;
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+  transition: background 0.2s, color 0.2s;
+}
+
+.dropdown-menu li a:hover {
+  background: #f0f8ff;
+  color: #0d6efd;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.username {
+  margin-right: 12px;
+  font-weight: 500;
+}

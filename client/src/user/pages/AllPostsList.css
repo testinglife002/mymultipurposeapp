@@ -1,0 +1,111 @@
+.allposts-container {
+  background: #f8f9fb;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.allposts-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.btn-create {
+  background: #2563eb;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn-create:hover {
+  background: #1e4fd1;
+}
+
+.allposts-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.allposts-table th, .allposts-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  text-align: left;
+}
+
+.allposts-table th {
+  background: #f1f3f5;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.actions {
+  display: flex;
+  gap: 10px;
+}
+
+.btn-icon {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: #555;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon.view:hover { color: #2563eb; }
+.btn-icon.edit:hover { color: #f59e0b; }
+.btn-icon.delete:hover { color: #dc2626; }
+
+.status-published {
+  color: #16a34a;
+  font-weight: 600;
+}
+.status-draft {
+  color: #f59e0b;
+  font-weight: 600;
+}
+
+.allposts-loading {
+  text-align: center;
+  padding: 3rem;
+  color: #555;
+  font-size: 1.2rem;
+}
+
+.spin {
+  animation: spin 1s linear infinite;
+  display: inline-block;
+  margin-right: 6px;
+}
+
+.btn-icon.publish {
+  color: #16a34a;
+}
+
+.btn-icon.publish:hover {
+  color: #22c55e;
+  transform: scale(1.1);
+}
+
+.status-pending {
+  color: #d97706;
+  font-weight: 500;
+}
+
+.status-published {
+  color: #16a34a;
+  font-weight: 500;
+}
+
+
+@keyframes spin {
+  100% { transform: rotate(360deg); }
+}

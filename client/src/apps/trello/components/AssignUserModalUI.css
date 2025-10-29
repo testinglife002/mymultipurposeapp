@@ -1,0 +1,114 @@
+.aum-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(23, 43, 77, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 16px;
+  overflow-y: auto;
+}
+
+.aum-modal {
+  background: #f4f5f7;
+  border-radius: 12px;
+  width: 400px;
+  max-width: 100%;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+}
+
+.aum-header {
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #172b4d;
+  border-bottom: 1px solid #dfe1e6;
+}
+
+.aum-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #172b4d;
+  transition: color 0.2s;
+}
+.aum-close:hover { color: #0079bf; }
+
+.aum-body {
+  padding: 16px;
+  max-height: 300px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.aum-user-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 8px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.aum-user-item:hover { background: #e1e5ea; }
+
+.aum-user-item input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  accent-color: #0079bf;
+}
+
+.aum-add-member {
+  display: flex;
+  gap: 8px;
+  margin-top: 12px;
+}
+.aum-add-member input {
+  flex: 1;
+  padding: 6px 8px;
+  border-radius: 6px;
+  border: 1px solid #dfe1e6;
+  outline: none;
+  font-size: 0.95rem;
+}
+.aum-add-member input:focus {
+  border-color: #0079bf;
+  box-shadow: 0 0 0 2px rgba(0, 121, 191, 0.2);
+}
+.aum-add-member .aum-btn.add {
+  background: #5aac44;
+  color: white;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.aum-add-member .aum-btn.add:hover { background: #519839; }
+
+.aum-footer {
+  padding: 12px 16px;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #dfe1e6;
+  gap: 8px;
+}
+
+.aum-btn.cancel {
+  background: #ebecf0;
+  color: #172b4d;
+  border-radius: 6px;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+.aum-btn.cancel:hover { background: #dfe1e6; }
+
+@media (max-width: 480px) {
+  .aum-modal { width: 100%; padding: 12px; }
+  .aum-body { max-height: 250px; }
+}

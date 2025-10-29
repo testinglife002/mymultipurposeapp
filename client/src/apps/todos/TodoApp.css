@@ -1,0 +1,334 @@
+/* App.css */
+
+/* Import font */
+@import url("https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap");
+
+/* Reset & global */
+
+
+/* App layout */
+.TodoApp {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Ubuntu", sans-serif;
+  background-color: #f4f6f8;
+}
+
+/* Sidebar */
+.Sidebar {
+  width: 300px;
+  min-width: 220px;
+  height: 100%;
+  background-color: #ffffff;
+  border-right: 1px solid #e5e5e5;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  padding-bottom: 1rem;
+}
+
+/* Main */
+.Main {
+  flex: 1;
+  height: 100%;
+  position: relative;
+  background-color: #f0f2f5;
+  overflow-y: auto;
+  padding: 2rem;
+}
+
+/* User */
+.User {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding: 1rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.User .logo img {
+  width: 50px;
+  border-radius: 50%;
+  border: 1px solid #000;
+}
+
+.User .info p {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.User .info a {
+  text-decoration: none;
+  color: #0080ff;
+  font-size: 0.9rem;
+}
+
+/* AddNewTodo */
+.AddNewTodo .btn {
+  padding: 0.5rem 1rem;
+}
+
+.AddNewTodo .btn button {
+  width: 100%;
+  height: 45px;
+  background-color: #0080ff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.AddNewTodo .btn button:hover {
+  filter: brightness(1.1);
+}
+
+/* Modal */
+.Modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Modal .container {
+  background: white;
+  padding: 1rem;
+  border-radius: 8px;
+  width: 90%;
+  max-width: 500px;
+}
+
+/* TodoForm */
+.TodoForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.TodoForm .text input {
+  padding: 0.8rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.TodoForm .text input:focus {
+  outline: none;
+  border-color: #0080ff;
+}
+
+.TodoForm .remind {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.TodoForm .pick-day,
+.TodoForm .pick-time,
+.TodoForm .pick-project {
+  display: flex;
+  flex-direction: column;
+}
+
+.TodoForm .projects {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.TodoForm .project {
+  padding: 5px 10px;
+  border: 1px solid #0080ff;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.TodoForm .project.active {
+  background-color: #0080ff;
+  color: white;
+}
+
+/* Calendar */
+.Calendar {
+  padding: 1rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.Calendar .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Calendar .header .title p {
+  margin-left: 5px;
+  font-weight: bold;
+}
+
+.Calendar .items {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+}
+
+.Calendar .items .item {
+  padding: 0.3rem 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+
+.Calendar .items .item:hover,
+.Calendar .items .item.active {
+  background-color: #e0f0ff;
+}
+
+/* Projects */
+.Projects {
+  padding: 1rem;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.Projects .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Projects .items {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+/* Project item */
+.Project {
+  padding: 0.5rem;
+  border-radius: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.Project:hover {
+  background-color: #f0f2f5;
+}
+
+.Project .edit-delete span {
+  margin-left: 5px;
+  cursor: pointer;
+}
+
+.Project .edit-delete span.edit:hover {
+  color: #1ec94c;
+}
+
+.Project .edit-delete span.delete:hover {
+  color: #ff4c4c;
+}
+
+/* AddNewProject */
+.AddNewProject .add-button span {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0080ff;
+  color: white;
+  padding: 5px;
+  border-radius: 50%;
+  transition: all 0.2s;
+}
+
+.AddNewProject .add-button span:hover {
+  filter: brightness(1.2);
+}
+
+/* Todos */
+.Todos {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.Todos .selected-project {
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.Todo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.4rem 0.6rem;
+  border-bottom: 1px solid #eee;
+  cursor: pointer;
+}
+
+.Todo p {
+  margin: 0;
+}
+
+/* EditTodo */
+.EditTodo {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 500px;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+/* Next7Days */
+.Next7Days .day {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+}
+
+.Next7Days .day .name {
+  font-weight: bold;
+}
+
+.Next7Days .day .total-todos {
+  color: #0080ff;
+  font-weight: bold;
+}
+
+/* Scrollbars */
+.Sidebar::-webkit-scrollbar,
+.Main::-webkit-scrollbar {
+  width: 6px;
+}
+
+.Sidebar::-webkit-scrollbar-thumb,
+.Main::-webkit-scrollbar-thumb {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+}
+
+.Sidebar::-webkit-scrollbar-track,
+.Main::-webkit-scrollbar-track {
+  background-color: transparent;
+}

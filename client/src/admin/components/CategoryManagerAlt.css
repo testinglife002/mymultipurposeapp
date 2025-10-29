@@ -1,0 +1,272 @@
+.cat-manager {
+  padding: 20px;
+  font-family: "Inter", sans-serif;
+}
+
+.cat-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+}
+
+.cat-table {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.cat-table-header,
+.cat-table-row {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  padding: 12px;
+  border-bottom: 1px solid #eee;
+  font-size: 14px;
+}
+
+.cat-table-header {
+  background: #f5f5f5;
+  font-weight: 600;
+}
+
+.cat-table-row:nth-child(even) {
+  background: #fafafa;
+}
+
+.cat-actions {
+  display: flex;
+  gap: 8px;
+}
+
+/* Buttons */
+.btn {
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+.btn.small {
+  padding: 4px 8px;
+  font-size: 13px;
+}
+
+.btn.primary {
+  background: #4a6cf7;
+  color: #fff;
+}
+.btn.primary:hover {
+  background: #3c57d3;
+  transform: translateY(-1px);
+}
+
+.btn.secondary {
+  background: #ddd;
+  color: #333;
+}
+.btn.secondary:hover {
+  background: #c5c5c5;
+}
+
+.btn.warning {
+  background: #f9a825;
+  color: #fff;
+}
+.btn.warning:hover {
+  background: #d18c1e;
+}
+
+.btn.danger {
+  background: #e53935;
+  color: #fff;
+}
+.btn.danger:hover {
+  background: #c62828;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 50;
+}
+
+.modal-box {
+  background: #fff;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  max-width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.icon-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  display: flex;
+  align-items: center;
+}
+
+.modal-form label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.modal-form input,
+.modal-form textarea,
+.modal-form select {
+  width: 100%;
+  padding: 8px 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  margin-top: 4px;
+  font-size: 14px;
+}
+
+.modal-form textarea {
+  resize: vertical;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+
+.cat-tree {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* Border around each parent + children group */
+.tree-node-box {
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: #fff;
+  margin-bottom: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.tree-node-box:hover {
+  border-color: #4a6cf7;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.06);
+}
+
+.tree-node-content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0;
+}
+
+.tree-label {
+  font-weight: 500;
+  font-size: 14px;
+  color: #333;
+}
+
+.subcount {
+  font-size: 12px;
+  font-weight: 600;
+  color: #4a6cf7;
+  margin-left: 4px;
+}
+
+.tree-children {
+  margin-top: 8px;
+  margin-left: 22px;
+  border-left: 2px dashed #e0e0e0;
+  padding-left: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.tree-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 6px;
+}
+
+.tree-node {
+  margin-left: 16px;
+  position: relative;
+}
+
+.tree-node::before {
+  content: '';
+  position: absolute;
+  left: -8px;
+  top: 10px;
+  width: 8px;
+  height: 1px;
+  background: #ccc;
+}
+
+.tree-node-content {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 0;
+}
+
+.tree-children {
+  margin-left: 20px;
+  border-left: 1px dashed #ddd;
+  padding-left: 8px;
+}
+
+.tree-actions {
+  margin-left: auto;
+  display: flex;
+  gap: 6px;
+}
+
+.icon-btn.chevron {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+}
+
+
+/* Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

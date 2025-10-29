@@ -1,0 +1,28 @@
+.note-card-item {
+  border-radius: 12px;
+  box-shadow: 0px 2px 6px rgba(0,0,0,0.06);
+  transition: all 0.2s ease-in-out;
+}
+
+.note-card-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0px 4px 12px rgba(0,0,0,0.12);
+}
+
+.card-actions {
+  display: flex;
+  gap: 0.25rem;
+}
+
+.edit-btn {
+  color: #007bff;
+}
+
+.delete-btn {
+  color: #ff4d4f;
+}
+
+.note-snippet {
+  color: #555;
+  line-height: 1.5;
+}

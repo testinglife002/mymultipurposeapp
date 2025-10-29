@@ -1,0 +1,165 @@
+.todos-details-page {
+  padding: 1.5rem;
+  background: #fff;
+  color: #333;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  padding: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.page-body {
+  margin-top: 1.5rem;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 1rem;
+}
+
+.page-body input,
+.page-body textarea,
+.page-body select {
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.subtodos-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.5rem;
+}
+
+.subtodos-table th,
+.subtodos-table td {
+  border: 1px solid #ddd;
+  padding: 0.5rem;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn {
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-primary {
+  background: #007bff;
+  color: white;
+}
+
+.btn-danger {
+  background: #dc3545;
+  color: white;
+}
+
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 6px;
+  width: 95%;
+  max-width: 420px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+}
+
+.add-subtodo-btn {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+.add-subtodo-btn button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+}
+
+
+.page-header.non-sticky {
+  position: static !important;
+}
+
+.countdown-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f8f9fa;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  padding: 0.6rem 0.8rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.countdown-row .info {
+  color: #007bff;
+  font-weight: 500;
+}
+
+.countdown-row .success {
+  color: #28a745;
+  font-weight: 500;
+}
+
+
+.row-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.countdown-box {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 500;
+  color: var(--text-color, #333);
+  background: var(--bs-light, #f8f9fa);
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 6px 10px;
+}
+
+.countdown-box .info {
+  color: #007bff;
+}
+
+.countdown-box .success {
+  color: #28a745;
+}
+

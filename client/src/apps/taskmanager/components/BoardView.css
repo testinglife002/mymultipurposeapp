@@ -1,0 +1,97 @@
+.board-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.board-column {
+  background: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.board-column-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.75rem;
+}
+
+.column-title {
+  font-weight: 600;
+  font-size: 1rem;
+  text-transform: capitalize;
+}
+
+.task-count {
+  background: #2563eb;
+  color: white;
+  font-size: 0.8rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+}
+
+.task-card {
+  background: #f9fafb;
+  border-radius: 8px;
+  padding: 0.75rem;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+  margin-bottom: 0.5rem;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.task-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.task-title {
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+}
+
+.task-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.priority-tag {
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  border-radius: 12px;
+  padding: 3px 8px;
+  font-weight: 500;
+}
+
+.priority-tag.high {
+  background: #fee2e2;
+  color: #b91c1c;
+}
+
+.priority-tag.medium {
+  background: #fef9c3;
+  color: #92400e;
+}
+
+.priority-tag.low {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.due-date {
+  font-size: 0.75rem;
+  color: #6b7280;
+}
+
+.no-tasks {
+  text-align: center;
+  color: #9ca3af;
+  font-size: 0.85rem;
+}

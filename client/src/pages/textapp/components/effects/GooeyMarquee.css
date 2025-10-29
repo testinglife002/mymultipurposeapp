@@ -1,0 +1,13 @@
+/*18️⃣ GooeyMarquee.css */
+.gooeyMarquee {
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  animation: marquee 10s linear infinite;
+  color: var(--color1, #fff);
+}
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}

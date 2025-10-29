@@ -1,0 +1,214 @@
+
+/*
+.app-mat-sidebar {
+  background: #222;
+  color: #fff;
+  transition: width 0.3s ease;
+  height: 100%;
+  position: sticky;
+  top: 64px; 
+  margin-top: 55px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.app-mat-sidebar.open {
+  width: 220px;
+}
+
+.app-mat-sidebar.collapsed {
+  width: 70px;
+}
+
+.app-mat-sidebar-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.app-mat-sidebar-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 15px;
+  color: #bbb;
+  transition: background 0.2s, color 0.2s;
+}
+
+.app-mat-sidebar-item:hover {
+  background: #333;
+  color: #fff;
+}
+
+.app-mat-sidebar-item.active {
+  background: #444;
+  color: #fff;
+}
+
+.sidebar-icon {
+  font-size: 20px;
+  min-width: 24px;
+  text-align: center;
+}
+
+.sidebar-label {
+  flex: 1;
+}
+
+.app-mat-submenu {
+  list-style: none;
+  padding-left: 40px;
+  background: #2a2a2a;
+}
+
+.app-mat-subitem {
+  padding: 8px 0;
+  font-size: 14px;
+  cursor: pointer;
+  color: #aaa;
+}
+
+.app-mat-subitem:hover,
+.app-mat-subitem.active {
+  color: #fff;
+}
+*/
+
+
+.app-mat-sidebar {
+  display: flex;
+  flex-direction: column;
+  background-color: #1976d2;
+  color: white;
+  height: 100vh;
+  transition: width 0.3s;
+  overflow-x: hidden;
+  border-right: 1px solid rgba(0,0,0,0.1);
+  margin-top: 50px;
+  margin-left: 0px;
+}
+
+.app-mat-sidebar-open {
+  width: 220px;
+}
+
+.app-mat-sidebar-collapsed {
+  width: 60px;
+}
+
+.app-mat-sidebar-toggle {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+.app-mat-sidebar-toggle button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.app-mat-sidebar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex: 1;
+}
+
+.app-mat-sidebar-item {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.app-mat-sidebar-item:hover {
+  background-color: #1565c0;
+}
+
+.app-mat-sidebar-item.active {
+  background-color: #0d47a1;
+}
+
+.app-mat-dropdown > div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-mat-submenu {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.app-mat-subitem {
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.app-mat-subitem:hover,
+.app-mat-subitem.active {
+  background-color: #0d47a1;
+}
+
+.app-mat-sidebar-tabs {
+  padding: 1rem;
+}
+
+.app-mat-tabs-header {
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.app-mat-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.app-mat-tab {
+  background: none;
+  border: none;
+  text-align: left;
+  padding: 0.5rem;
+  cursor: pointer;
+  color: inherit;
+  border-radius: 4px;
+}
+
+.app-mat-tab.active {
+  background-color: #0d47a1;
+}
+
+.app-mat-tab.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.app-mat-tab-content {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+}
+
+.app-mat-sidebar-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.app-mat-sidebar-icons button {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+  font-size: 1.2rem;
+}
+
+
+

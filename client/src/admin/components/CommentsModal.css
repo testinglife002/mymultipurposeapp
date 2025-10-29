@@ -1,0 +1,78 @@
+.comments-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.comments-modal {
+  background: #fff;
+  width: 90%;
+  max-width: 650px;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+  max-height: 85vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+  margin-bottom: 10px;
+}
+
+.close-icon {
+  cursor: pointer;
+  color: #444;
+}
+
+.comment-trigger {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #007bff;
+  cursor: pointer;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+.comment-trigger:hover {
+  text-decoration: underline;
+}
+
+.comment-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.approve-btn {
+  background: #4caf50;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: #f44336;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.comment-item.pending {
+  opacity: 0.7;
+  background: #fff7e6;
+}

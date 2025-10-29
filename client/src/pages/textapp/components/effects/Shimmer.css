@@ -1,0 +1,15 @@
+/* 7️⃣ Shimmer.css */
+.shimmer {
+  position: relative;
+  color: var(--shimmer-color1, #fff);
+  background: linear-gradient(90deg, var(--shimmer-color1, #fff), var(--shimmer-color2, #f0f), var(--shimmer-color1, #fff));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  animation: shimmerMove 2s infinite linear;
+}
+
+@keyframes shimmerMove {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}

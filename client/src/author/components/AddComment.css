@@ -1,0 +1,52 @@
+.add-comment {
+  border-top: 1px solid #ddd;
+  padding-top: 1rem;
+  margin-top: 1rem;
+}
+
+.add-comment h4 {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+
+.add-comment form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.add-comment textarea {
+  resize: vertical;
+  padding: 0.6rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 0.95rem;
+  transition: border-color 0.2s;
+}
+
+.add-comment textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.add-comment button {
+  align-self: flex-end;
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.add-comment button:hover {
+  background: #0056b3;
+}
+
+.comment-msg {
+  margin-top: 0.3rem;
+  font-size: 0.9rem;
+  color: #28a745;
+}

@@ -1,0 +1,50 @@
+.noti-panel {
+  position: relative;
+}
+
+.noti-btn {
+  background: none;
+  border: none;
+  position: relative;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.noti-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: red;
+  color: white;
+  font-size: 10px;
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+.noti-dropdown {
+  position: absolute;
+  right: 0;
+  top: 35px;
+  width: 300px;
+  background: white;
+  border: 1px solid #ddd;
+  box-shadow: 0px 2px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 10px;
+  z-index: 10;
+}
+
+.noti-item {
+  border-bottom: 1px solid #eee;
+  padding: 8px 0;
+}
+
+.noti-item:last-child {
+  border-bottom: none;
+}
+
+.noti-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}

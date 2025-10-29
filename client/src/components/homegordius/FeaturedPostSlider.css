@@ -1,0 +1,76 @@
+/* src/components/FeaturedPostSlider.css */
+
+.gordius-featured-slider {
+  padding: 2rem 1rem;
+  background: #1c1c1c;
+  color: #fff;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.gordius-featured-slider h2 {
+  margin-bottom: 1rem;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+  color: #ff6f61;
+}
+
+.gordius-featured-slide {
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+
+.gordius-featured-slide img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.gordius-featured-slide:hover img {
+  transform: scale(1.05);
+}
+
+.gordius-featured-caption {
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.8));
+  width: 100%;
+  padding: 1rem;
+  color: #fff;
+}
+
+.gordius-featured-caption h3 {
+  margin: 0 0 0.25rem 0;
+  font-weight: 700;
+}
+
+.gordius-featured-caption p {
+  font-size: 0.9rem;
+}
+
+.gordius-featured-caption a {
+  color: #ff6f61;
+  text-decoration: none;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+}
+
+.gordius-featured-caption a svg {
+  margin-left: 0.25rem;
+}
+
+.gordius-thumbs-swiper img {
+  width: 100%;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.gordius-thumbs-swiper img:hover {
+  transform: scale(1.05);
+}

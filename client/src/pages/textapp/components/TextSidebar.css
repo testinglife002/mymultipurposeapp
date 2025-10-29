@@ -1,0 +1,126 @@
+/* src/pages/textapp/components/TextSidebar.css */
+
+.text-sidebar {
+  width: 260px;
+  padding: 12px;
+  background: linear-gradient(180deg, #0f1724, #071029);
+  color: #e6eef8;
+  border-right: 1px solid rgba(255,255,255,0.04);
+  overflow-y: auto;
+  box-sizing: border-box;
+}
+
+.sidebar-top {
+  margin-bottom: 12px;
+}
+
+.sidebar-title {
+  margin: 0 0 8px 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/* live preview area for the selected layer's first line */
+.live-preview {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.live-preview-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+  margin-bottom: 6px;
+}
+
+.live-preview-box {
+  background: rgba(255,255,255,0.03);
+  padding: 10px;
+  border-radius: 8px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* preset grid/list */
+.preset-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.sidebar-divider {
+  margin: 12px 0;
+  border: none;
+  height: 1px;
+  background: rgba(255,255,255,0.04);
+}
+
+/* saved templates area */
+.text-sidebar-saved {
+  padding-bottom: 12px;
+}
+
+.saved-header {
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:6px;
+}
+
+.btn.small {
+  padding: 6px;
+  min-width: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.templates-list {
+  margin-top: 8px;
+}
+
+.template-item {
+  padding: 8px;
+  border-radius: 6px;
+  background: rgba(255,255,255,0.02);
+  margin-bottom: 6px;
+  cursor: pointer;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.template-title {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.template-meta {
+  font-size: 11px;
+  color: rgba(255,255,255,0.6);
+}
+
+/* muted text */
+.muted {
+  color: rgba(255,255,255,0.45);
+  font-style: italic;
+}
+
+/* small utility rotation for chevron */
+.rotated { transform: rotate(90deg); transition: transform 180ms ease; }
+
+.template-item .delete {
+  background: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 2px 6px;
+  margin-left: 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}

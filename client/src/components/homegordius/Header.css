@@ -1,0 +1,78 @@
+.gordius-header {
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.gordius-navbar {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.gordius-logo {
+  font-weight: 800;
+  font-size: 1.5rem;
+  color: #222;
+  letter-spacing: -0.5px;
+}
+
+.gordius-menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #333;
+}
+
+.gordius-nav-links {
+  display: flex;
+  list-style: none;
+  gap: 1.2rem;
+}
+
+.gordius-nav-links li a {
+  text-decoration: none;
+  color: #444;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: color 0.2s ease;
+}
+
+.gordius-nav-links li a:hover {
+  color: #712cf9;
+}
+
+.gordius-subscribe {
+  background: #712cf9;
+  color: #fff !important;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+}
+
+@media (max-width: 768px) {
+  .gordius-menu-toggle {
+    display: block;
+  }
+  .gordius-nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    flex-direction: column;
+    background: #fff;
+    width: 200px;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    display: none;
+  }
+  .gordius-nav-links.gordius-open {
+    display: flex;
+  }
+}

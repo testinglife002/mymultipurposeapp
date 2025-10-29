@@ -1,0 +1,175 @@
+/* =========================
+   General Dialog & Typography
+   ========================= */
+.MuiDialog-paper {
+  background-color: #f9fafb !important;
+  border-radius: 12px !important;
+  padding: 0;
+}
+
+.MuiDialogTitle-root {
+  font-weight: 600;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.MuiDialogContent-root {
+  padding: 16px 24px !important;
+}
+
+.MuiDialogActions-root {
+  padding: 12px 24px !important;
+}
+
+/* =========================
+   Editable Form Fields
+   ========================= */
+.MuiTextField-root {
+  background: #fff;
+  border-radius: 6px;
+}
+
+.MuiInputBase-root {
+  background: #fff;
+}
+
+/* =========================
+   Upload Label
+   ========================= */
+.upload-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  color: #2563eb;
+  font-weight: 500;
+}
+
+.file-input {
+  display: none;
+}
+
+/* =========================
+   Horizontal Scrollable Assets Carousel
+   ========================= */
+.assets-carousel {
+  display: flex;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 6px 4px;
+  scroll-behavior: smooth;
+}
+
+.assets-carousel::-webkit-scrollbar {
+  height: 6px;
+}
+
+.assets-carousel::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 3px;
+}
+
+.asset-thumb {
+  position: relative;
+  min-width: 80px;
+  min-height: 80px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  background: #f9fafb;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.asset-thumb:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.asset-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.asset-icon {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 12px;
+  color: #f87171;
+  padding: 4px;
+  line-height: 1.2;
+}
+
+/* Remove Button */
+.remove-btn {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: #fff;
+  border-radius: 50%;
+  padding: 2px;
+  cursor: pointer;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.15);
+  transition: background 0.2s;
+}
+
+.remove-btn:hover {
+  background: #ef4444;
+  color: #fff;
+}
+
+/* =========================
+   Chips for Team Members
+   ========================= */
+.MuiChip-root {
+  background-color: #e0f7fa;
+  color: #065f46;
+  font-weight: 500;
+}
+
+/* =========================
+   Timer Text
+   ========================= */
+.timer-text {
+  margin-bottom: 8px;
+  font-weight: 600;
+}
+
+/* =========================
+   Recent Activities
+   ========================= */
+.recent-activities {
+  margin-top: 16px;
+}
+
+.recent-activities p {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin-bottom: 4px;
+}
+
+/* =========================
+   Responsive
+   ========================= */
+@media (max-width: 600px) {
+  .assets-carousel {
+    gap: 8px;
+  }
+
+  .asset-thumb {
+    min-width: 64px;
+    min-height: 64px;
+  }
+
+  .upload-label {
+    font-size: 0.875rem;
+  }
+}

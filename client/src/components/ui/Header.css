@@ -1,0 +1,181 @@
+/* Base header styling */
+.header-alt {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: gray;
+  border-bottom: 2px solid #0d6efd;
+  transition: all 0.3s ease-in-out;
+  max-height: 45px;
+  border-radius: 5px;
+  margin-top: 0;
+}
+
+.header-alt.shrink {
+  padding: 4px 0;
+}
+
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 12px 2px 10px;
+}
+
+/* Logo */
+.logo a {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0d6efd;
+  text-decoration: none;
+}
+.logo a:hover {
+  color: #00bfff;
+}
+
+/* Nav tabs */
+.nav-tabs {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.nav-tabs a {
+  margin: 0 10px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: 500;
+  color: #444;
+  transition: 0.3s all;
+}
+.nav-tabs a:hover {
+  background: #e9f5ff;
+  color: #0d6efd;
+}
+
+/* Buttons */
+.header-buttons .btn {
+  margin-left: 8px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  border: 1px solid #0d6efd;
+  transition: 0.3s ease;
+}
+.btn-outline {
+  background: transparent;
+  color: #0d6efd;
+}
+.btn-outline:hover {
+  background: #0d6efd;
+  color: #fff;
+}
+.btn-primary {
+  background: #0d6efd;
+  color: #fff;
+}
+.btn-primary:hover {
+  opacity: 0.85;
+}
+
+/* Dropdown styling */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 0.95rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border-radius: 6px;
+  transition: background 0.2s, color 0.2s;
+}
+.dropdown-toggle:hover,
+.dropdown-toggle.active {
+  background: #e9f5ff;
+  color: #0d6efd;
+}
+
+/* Arrow icon next to dropdown label */
+.dropdown-arrow {
+  transition: transform 0.2s ease;
+}
+.dropdown-toggle.active .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Highlight the dropdown if any link is active */
+.active-dropdown .dropdown-toggle {
+  background: #d0e7ff;
+  color: #0d6efd;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 180px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 8px 0;
+  list-style: none;
+  z-index: 999;
+  opacity: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  max-height: 300px;
+  scrollbar-width: thin;
+  scrollbar-color: #ccc transparent;
+}
+
+.dropdown-menu::-webkit-scrollbar {
+  width: 6px;
+}
+.dropdown-menu::-webkit-scrollbar-thumb {
+  background-color: #ccc;
+  border-radius: 10px;
+}
+
+.dropdown-menu li a {
+  display: block;
+  width: 100%;
+  padding: 8px 14px;
+  text-decoration: none;
+  color: #333;
+  transition: background 0.2s, color 0.2s;
+}
+
+/* Highlight active link inside dropdown */
+.dropdown-menu li.active-link a {
+  background: #e9f5ff;
+  color: #0d6efd;
+  font-weight: 600;
+}
+
+.dropdown-menu li a:hover {
+  background: #f0f8ff;
+  color: #0d6efd;
+}
+
+/* Username */
+.username {
+  margin-right: 12px;
+  font-weight: 500;
+}
+
+/* Page content */
+.page-content {
+  padding-top: 100px;
+}
