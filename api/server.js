@@ -73,25 +73,20 @@ import sendPulseRoutes from "./routes/sendPulseRoutes.js";
 const allowedOrigins = [
   "http://localhost:5173",
   "http://127.0.0.1:5173",
-];
-
-if (process.env.CLIENT_URL) allowedOrigins.push(process.env.CLIENT_URL);
-if (process.env.VERCEL_URL) {
-  // Vercel provides VERCEL_URL without protocol; accept https
-  allowedOrigins.push(`https://${process.env.VERCEL_URL}`);
-}
+  process.env.CLIENT_URL,  // add directly
+  `https://${process.env.VERCEL_URL}` // no trailing slash
+].filter(Boolean);
 
 app.use(cors({
-  origin: function(origin, callback){
-    if(!origin) return callback(null, true); // for Postman or server-to-server requests
-    if(allowedOrigins.includes(origin)){
-      callback(null, true);
-    } else {
-      callback(new Error("Not allowed by CORS"));
-    }
+  origin: function (origin, callback) {
+    if (!origin) return callback(null, true);
+    if (allowedOrigins.includes(origin)) return callback(null, true);
+    console.log("❌ Blocked by CORS:", origin);
+    return callback(new Error("Not allowed by CORS"));
   },
-  credentials: true
+  credentials: true,
 }));
+
 
 
 /*
