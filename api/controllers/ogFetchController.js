@@ -13,7 +13,7 @@ export const fetchOGMeta = async (req, res) => {
     // Fetch the target page
     const { data: html } = await axios.get(targetUrl, {
       headers: {
-        "User-Agent": "Mozilla/5.0 (LinkPreviewBot/1.0; +https://yourdomain.com)",
+        "User-Agent": "Mozilla/5.0 (LinkPreviewBot/1.0; +https://mymultipurposeapp.vercel.app)",
       },
       timeout: 8000,
     });

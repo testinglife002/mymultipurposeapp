@@ -12,7 +12,7 @@ export const getOGMeta = async (req, res) => {
 
     const images = post.images?.length
       ? post.images.map(img => img.url || img).filter(Boolean)
-      : ["https://yourdomain.com/default-og.jpg"];
+      : ["https://mymultipurposeapp.vercel.app/default-og.jpg"];
 
     // escape HTML entities to avoid breaking meta tags
     const escapeHtml = str => str?.replace(/[&<>'"]/g, c => (
@@ -23,7 +23,7 @@ export const getOGMeta = async (req, res) => {
       <meta property="og:title" content="${escapeHtml(post.title)}" />
       <meta property="og:description" content="${escapeHtml(post.description)}" />
       <meta property="og:type" content="article" />
-      <meta property="og:url" content="https://yourdomain.com/post/${post.slug}" />
+      <meta property="og:url" content="https://mymultipurposeapp.vercel.app/post/${post.slug}" />
       ${images.map(img => `<meta property="og:image" content="${img}" />`).join('\n')}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content="${escapeHtml(post.title)}" />
@@ -39,11 +39,11 @@ export const getOGMeta = async (req, res) => {
         <title>${escapeHtml(post.title)}</title>
         ${ogTags}
         <script>
-          window.location.href = "https://yourdomain.com/post/${post.slug}";
+          window.location.href = "https://mymultipurposeapp.vercel.app/post/${post.slug}";
         </script>
       </head>
       <body>
-        Redirecting to <a href="https://yourdomain.com/post/${post.slug}">${escapeHtml(post.title)}</a>...
+        Redirecting to <a href="https://mymultipurposeapp.vercel.app/post/${post.slug}">${escapeHtml(post.title)}</a>...
       </body>
       </html>
     `;
